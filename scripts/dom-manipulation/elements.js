@@ -10,6 +10,8 @@ export const hints = {
   callFriend: callFriend,
 };
 
-console.log(hints);
+export const moneyClassesArr = document.querySelector(".sum");
 
-const moneyClassesArr = document.querySelector(".sum");
+export const mainQuestion = document.querySelector(".main-question");
+
+export const answerContainers = document.querySelectorAll(".answer");
