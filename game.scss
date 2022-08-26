@@ -1,0 +1,118 @@
+body {
+  background-image: url("images/bg_home_screen.jpg");
+}
+.main-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: auto;
+
+  padding-top: 20px;
+  .container {
+    max-width: 1280px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    .jokers {
+      display: flex;
+      justify-content: space-around;
+      .joker {
+        cursor: pointer;
+      }
+    }
+  }
+  .timer {
+    width: 245px;
+  }
+  #money {
+    position: relative;
+    min-width: 240px;
+    margin-bottom: 50px;
+    font-weight: 900;
+    ol {
+      color: #e1a02e;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      box-sizing: border-box;
+      justify-content: space-evenly;
+      font-size: 20px;
+      align-items: flex-end;
+    }
+    li {
+      background: url("images/sum_bg.png");
+      width: 195px;
+      height: 35px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      color: #ffb600;
+    }
+    .number {
+      width: 16px;
+      text-align: right;
+      margin-left: 30px;
+    }
+    .money {
+      padding-left: 25px;
+    }
+  }
+}
+.questions {
+  .main-question-container {
+    width: 900px;
+    margin: auto;
+  }
+  .main-question {
+    width: 940px;
+    height: 103px;
+    background: url("images/bg_question.png");
+    box-shadow: inset 116px 0px 48px -65px #180558,
+      inset -116px 0px 48px -65px #180558;
+    background-position-x: center;
+    color: white;
+    padding: 20px 160px;
+    box-sizing: border-box;
+    font-size: 18px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    line-height: 28px;
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .answers {
+    width: 850px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 20px 0;
+    margin: auto;
+    position: relative;
+    padding-top: 20px;
+    .answer {
+      margin: auto;
+      width: 382px;
+      height: 52px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      background: url("images/bg_answer.png");
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+  }
+  .line {
+    background: url("images/lineB.png");
+    width: 1180px;
+    height: 2px;
+    background-repeat: no-repeat;
+    background-size: 89%;
+    position: absolute;
+    left: -100px;
+    top: 45px;
+  }
+  .line:nth-child(2) {
+    top: 116px;
+  }
+}

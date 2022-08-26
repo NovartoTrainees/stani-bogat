@@ -4,21 +4,30 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="game.css" />
     <title>Document</title>
   </head>
   <body>
-    <div>
+    <div class="main-container">
       <div class="container">
         <div class="timer"></div>
         <div class="main">
           <div class="jokers">
-            <div id="crowdHint"></div>
-            <div id="fiftyFiftyHint"></div>
-            <div id="callFriendHint"></div>
+            <div class="joker">
+              <img src="images/friend.png" alt="" />
+            </div>
+            <div class="joker">
+              <img src="images/50_50.png" alt="" />
+            </div>
+            <div class="joker">
+              <img src="images/call.png" alt="" />
+            </div>
           </div>
-          <div class="logo"></div>
+          <div class="logo">
+            <img src="images/logo.png" alt="" />
+          </div>
         </div>
-        <div class="money">
+        <div id="money">
           <ol reversed>
             <li class="current sum">
               <span class="number">15</span>
@@ -84,11 +93,13 @@
         </div>
       </div>
       <div class="questions">
-        <div class="main-question"><span class="question-holder"></span></div>
+        <div class="main-question-container">
+          <div class="main-question"></div>
+        </div>
         <div class="answers">
           <div class="line"></div>
           <div class="line"></div>
-          <div class="shadow"></div>
+
           <div class="answer"><span class="answer-holder"></span></div>
           <div class="answer"><span class="answer-holder"></span></div>
           <div class="answer"><span class="answer-holder"></span></div>
