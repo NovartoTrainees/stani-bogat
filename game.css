@@ -1,5 +1,5 @@
 body {
-  background-image: url("bg_home_screen.jpg");
+  background-image: url("images/bg_home_screen.jpg");
 }
 
 .main-container {
@@ -44,7 +44,7 @@ body {
   align-items: flex-end;
 }
 .main-container #money li {
-  background: url("sum_bg.png");
+  background: url("images/sum_bg.png");
   width: 195px;
   height: 35px;
   display: flex;
@@ -68,7 +68,7 @@ body {
 .questions .main-question {
   width: 940px;
   height: 103px;
-  background: url("bg_question.png");
+  background: url("images/bg_question.png");
   box-shadow: inset 116px 0px 48px -65px #180558, inset -116px 0px 48px -65px #180558;
   background-position-x: center;
   color: white;
@@ -97,12 +97,12 @@ body {
   overflow: hidden;
   position: relative;
   cursor: pointer;
-  background: url("bg_answer.png");
+  background: url("images/bg_answer.png");
   background-size: 100%;
   background-repeat: no-repeat;
 }
 .questions .line {
-  background: url("lineB.png");
+  background: url("images/lineB.png");
   width: 1180px;
   height: 2px;
   background-repeat: no-repeat;
