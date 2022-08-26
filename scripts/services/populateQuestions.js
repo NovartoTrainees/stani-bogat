@@ -1,4 +1,4 @@
-import { questions } from "./variables.js";
+import { questions } from "../variables.js";
 
 const populateQuestions = (data) => {
   const transformed_data = transformData(data);
