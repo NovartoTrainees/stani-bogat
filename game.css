@@ -69,7 +69,8 @@ body {
   width: 940px;
   height: 103px;
   background: url("images/bg_question.png");
-  box-shadow: inset 116px 0px 48px -65px #180558, inset -116px 0px 48px -65px #180558;
+  box-shadow: inset 116px 0px 48px -65px #180558,
+    inset -116px 0px 48px -65px #180558;
   background-position-x: center;
   color: white;
   padding: 20px 160px;
@@ -80,6 +81,7 @@ body {
   line-height: 28px;
   display: table-cell;
   vertical-align: middle;
+  overflow-wrap: anywhere;
 }
 .questions .answers {
   width: 850px;
