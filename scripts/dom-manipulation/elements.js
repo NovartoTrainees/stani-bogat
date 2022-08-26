@@ -12,4 +12,4 @@ export const hints = {
 
 console.log(hints);
 
-const money = document.querySelector(".sum");
+const moneyClassesArr = document.querySelector(".sum");
