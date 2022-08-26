@@ -1,6 +1,6 @@
 import fetchQuestions from "./services/fetchQuestions.js";
-import fiftyFiftyHint from "./hints.js";
+import { callAFriend } from "./hints.js";
 
 await fetchQuestions();
 
-fiftyFiftyHint();
+callAFriend();
