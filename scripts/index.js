@@ -1,3 +1,3 @@
-import fetchQuestions from "./fetchQuestions.js";
+import fetchQuestions from "./services/fetchQuestions.js";
 
 fetchQuestions();
