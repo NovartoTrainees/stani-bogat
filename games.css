@@ -184,17 +184,4 @@ body {
   height: 100%;
 }
 
-.bar {
-  background-image: url("/images/bar.jpg");
-  height: 100px;
-  width: 30px;
-}
-
-.mask {
-  background-image: url("/images/bg_home_screen.jpg");
-  position: absolute;
-  width: 30px;
-  height: 100px;
-}
-
-/*# sourceMappingURL=game.css.map */
+/*# sourceMappingURL=games.css.map */
