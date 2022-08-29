@@ -3,7 +3,10 @@ import fetchQuestions from "../services/fetchQuestions.js";
 import { questions } from "../variables.js";
 
 export function Visualise() {
+  const current_question = questions[0];
+  
   MainQuestion();
+
   Answer(current_question.answers[0], elements.quiz.answerA);
   Answer(current_question.answers[1], elements.quiz.answerB);
   Answer(current_question.answers[2], elements.quiz.answerC);
