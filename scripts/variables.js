@@ -2,4 +2,5 @@ const questions = [];
 
 let questionIndex = 1;
 
-export { questions, questionIndex };
+const questionsDifficulty = ["easy", "medium", "hard"];
+export { questions, questionIndex, questionsDifficulty };

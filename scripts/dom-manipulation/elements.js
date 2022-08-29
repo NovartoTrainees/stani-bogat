@@ -24,9 +24,9 @@ console.log(Array.prototype.slice.call(document.querySelectorAll(".answer")));
 export const quiz = {
   question: question,
   answerA: answerArray[0],
-  answerD: answerArray[1],
-  answerE: answerArray[2],
-  answerF: answerArray[3],
+  answerB: answerArray[1],
+  answerC: answerArray[2],
+  answerD: answerArray[3],
 };
 
 console.log(quiz);
