@@ -14,7 +14,7 @@ export const stagesArray = Array.prototype.slice
   .call(document.querySelectorAll(".sum"))
   .reverse();
 
-const [question, answerArray] = [
+export const [question, answerArray] = [
   document.querySelector(".main-question"),
   Array.prototype.slice.call(document.querySelectorAll(".answer-holder")),
 ];
