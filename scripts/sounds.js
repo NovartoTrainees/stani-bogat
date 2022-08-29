@@ -10,22 +10,22 @@ export function PlayPhoneAFriend() {
 export function PlayWrongAnswer() {
   PlayAudioFile("sounds/phone-a-friend.mp3");
 }
-export function PlayHundredToThousand(){
+export function PlayHundredToThousand() {
   PlayAudioFile("sounds/soundQuestionFrom100To1000.mp3");
 }
-export function PlayThousandToFiftyThousand(){
+export function PlayThousandToFiftyThousand() {
   PlayAudioFile("sounds/soundQuestionFrom1000To50000.mp3");
 }
-export function PlayFiftyThousand(){
+export function PlayFiftyThousand() {
   PlayAudioFile("sounds/soundQuestion50000.mp3");
 }
-export function PlayOneHundredThousand(){
+export function PlayOneHundredThousand() {
   PlayAudioFile("sounds/soundQuestion100000.mp3");
 }
-export function PlayLetsPlaySound(){
+export function PlayLetsPlaySound() {
   PlayAudioFile("sounds/lets-play.mp3")
 }
-export function PlayMainTheme(){
+export function PlayMainTheme() {
   PlayAudioFile("sounds/main-theme.mp3")
 }
 function PlayAudioFile(audioName) {
