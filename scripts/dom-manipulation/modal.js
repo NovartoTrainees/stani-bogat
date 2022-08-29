@@ -3,7 +3,7 @@
  * @param {[float, float, float, float]} percentages
  * @output Modal Element
  */
-function CreateCrowdHelpModal(percentages) {
+export function CreateCrowdHelpModal(percentages) {
   const modal = document.createElement("div");
   const canvas = document.createElement("canvas");
 
