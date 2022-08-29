@@ -9,6 +9,7 @@ import {
 import * as elements from "../dom-manipulation/elements.js";
 import renderNextQuestionAndAnswers from "../dom-manipulation/visualisation.js";
 import fetchQuestions from "../services/fetchQuestions.js";
+import {updateStage} from "./stairwayStages.js"
 
 elements.quiz.answerA.addEventListener("click", checkTheAnswer);
 elements.quiz.answerB.addEventListener("click", checkTheAnswer);
@@ -33,7 +34,7 @@ function checkTheAnswer(event) {
             if (questions.length === 0) {
                 fetchQuestions(questionsDifficulty[0]);
             }
-
+            updateStage();
             incrementQuestionIndex();
 
 
