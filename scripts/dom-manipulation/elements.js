@@ -16,7 +16,7 @@ export const stagesArray = Array.prototype.slice
 
 const [question, answerArray] = [
   document.querySelector(".main-question"),
-  Array.prototype.slice.call(document.querySelectorAll(".answer")),
+  Array.prototype.slice.call(document.querySelectorAll(".answer-holder")),
 ];
 
 console.log(Array.prototype.slice.call(document.querySelectorAll(".answer")));
