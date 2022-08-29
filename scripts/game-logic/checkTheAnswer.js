@@ -1,6 +1,6 @@
+
 import { questionsDifficulty,questions } from "../variables.js";
 import * as elements from "../dom-manipulation/elements.js";
-
 
 elements.quiz.answerA.addEventListener("click",checkTheAnswer);
 elements.quiz.answerB.addEventListener("click",checkTheAnswer);
@@ -16,5 +16,6 @@ function checkTheAnswer (event){
 }
 
 export {checkTheAnswer};
+
 
 
