@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="game.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="container">
+        <div class="timer">
+          <div class="exit-button-block">
+            <button id="exit-button">Exit</button>
+          </div>
+        </div>
+        <div class="main">
+          <div class="jokers">
+            <div class="joker">
+              <button id="audience"></button>
+            </div>
+            <div class="joker">
+              <button id="fifty"></button>
+            </div>
+            <div class="joker">
+              <button id="phone-call"></button>
+            </div>
+          </div>
+          <div class="logo">
+            <img src="images/logo.png" alt="" />
+          </div>
+        </div>
+        <div id="money">
+          <ol reversed>
+            <li class="current sum">
+              <span class="number">15</span>
+              <span class="money">100 000 лв.</span>
+            </li>
+            <li class="sum">
+              <span class="number">14</span>
+              <span class="money">50 000 лв.</span>
+            </li>
+            <li class="sum">
+              <span class="number">13</span>
+              <span class="money">30 000 лв.</span>
+            </li>
+            <li class="sum">
+              <span class="number">12</span>
+              <span class="money">20 000 лв.</span>
+            </li>
+            <li class="sum">
+              <span class="number">11</span>
+              <span class="money">10 000 лв.</span>
+            </li>
+            <li class="sum">
+              <span class="number">10</span>
+              <span class="money">5 000 лв.</span>
+            </li>
+            <li class="sum">
+              <span class="number">9</span>
+              <span class="money">3 000 лв.</span>
+            </li>
+            <li class="sum">
+              <span class="number">8</span>
+              <span class="money">2 000 лв.</span>
+            </li>
+            <li class="sum">
+              <span class="number">7</span>
+              <span class="money">1 500 лв.</span>
+            </li>
+            <li class="sum">
+              <span class="number">6</span>
+              <span class="money">1 000 лв.</span>
+            </li>
+            <li class="sum">
+              <span class="number">5</span>
+              <span class="money">500 лв.</span>
+            </li>
+            <li class="sum">
+              <span class="number">4</span>
+              <span class="money">400 лв.</span>
+            </li>
+            <li class="sum">
+              <span class="number">3</span>
+              <span class="money">300 лв.</span>
+            </li>
+            <li class="sum">
+              <span class="number">2</span>
+              <span class="money">200 лв.</span>
+            </li>
+            <li class="sum">
+              <span class="number">1</span>
+              <span class="money">100 лв.</span>
+            </li>
+          </ol>
+        </div>
+      </div>
+      <div class="questions">
+        <div class="main-question-container">
+          <div class="main-question"></div>
+        </div>
+        <div class="answers">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div id="dummyAnswer" style="display: none"></div>
+          <div class="answer"><button class="answer-holder"></button></div>
+          <div class="answer"><button class="answer-holder"></button></div>
+          <div class="answer"><button class="answer-holder"></button></div>
+          <div class="answer"><button class="answer-holder"></button></div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./scripts/index.js"></script>
+  </body>
+</html>
