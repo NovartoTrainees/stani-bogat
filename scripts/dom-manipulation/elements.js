@@ -10,6 +10,23 @@ export const hints = {
   callFriend: callFriend,
 };
 
-console.log(hints);
+export const stagesArray = Array.prototype.slice
+  .call(document.querySelectorAll(".sum"))
+  .reverse();
 
-const money = document.querySelector(".sum");
+const [question, answerArray] = [
+  document.querySelector(".main-question"),
+  Array.prototype.slice.call(document.querySelectorAll(".answer")),
+];
+
+console.log(Array.prototype.slice.call(document.querySelectorAll(".answer")));
+
+export const quiz = {
+  question: question,
+  answerA: answerArray[0],
+  answerD: answerArray[1],
+  answerE: answerArray[2],
+  answerF: answerArray[3],
+};
+
+console.log(quiz);

@@ -5,7 +5,7 @@ const populateQuestions = (data) => {
 
   transformed_data.forEach((question) => questions.push(question));
 
-  console.log(questions);
+  // console.log(questions);
 };
 
 const transformData = (data) => {
