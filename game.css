@@ -1,12 +1,14 @@
 body {
-  background-image: url("images/bg_home_screen.jpg");
+  background-color: #170557;
 }
 
 .main-container {
-  width: 100%;
-  max-width: 1280px;
+  background-image: url("images/bg_home_screen.jpg");
+  width: 1300px;
   margin: auto;
-  padding-top: 20px;
+  padding: 80px;
+  background-position-x: -235px;
+  background-repeat: no-repeat;
 }
 .main-container .container {
   max-width: 1280px;
@@ -19,11 +21,47 @@ body {
   display: flex;
   justify-content: space-around;
 }
-.main-container .container .jokers .joker {
+.main-container .container .jokers .joker #audience {
+  background-image: url("images/friend.png");
+  width: 90px;
+  height: 58px;
+  overflow: hidden;
+  position: relative;
   cursor: pointer;
+  border: none;
+  background-repeat: no-repeat;
+  border-radius: 30px;
+  background-size: 100%;
+  background-color: transparent;
+}
+.main-container .container .jokers .joker #fifty {
+  background-image: url("images/50_50.png");
+  width: 90px;
+  height: 58px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  border: none;
+  background-repeat: no-repeat;
+  border-radius: 30px;
+  background-size: 100%;
+  background-color: transparent;
+}
+.main-container .container .jokers .joker #phone-call {
+  background-image: url("images/call.png");
+  width: 90px;
+  height: 58px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  border: none;
+  background-repeat: no-repeat;
+  border-radius: 30px;
+  background-size: 100%;
+  background-color: transparent;
 }
 .main-container .timer {
-  width: 245px;
+  width: 230px;
 }
 .main-container #money {
   position: relative;
@@ -69,8 +107,7 @@ body {
   width: 940px;
   height: 103px;
   background: url("images/bg_question.png");
-  box-shadow: inset 116px 0px 48px -65px #180558,
-    inset -116px 0px 48px -65px #180558;
+  box-shadow: inset 116px 0px 48px -65px #180558, inset -116px 0px 48px -65px #180558;
   background-position-x: center;
   color: white;
   padding: 20px 160px;
@@ -94,14 +131,32 @@ body {
 }
 .questions .answers .answer {
   margin: auto;
+}
+.questions .answers .answer button {
+  background: url("images/bg_answer.png");
   width: 382px;
   height: 52px;
   overflow: hidden;
   position: relative;
   cursor: pointer;
-  background: url("images/bg_answer.png");
+  border: none;
+  color: white;
   background-size: 100%;
   background-repeat: no-repeat;
+  border-radius: 30px;
+}
+.questions .answers .answer button:hover {
+  background: url("images/bg_answer_selected.png");
+  width: 382px;
+  height: 52px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  border: none;
+  color: white;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border-radius: 30px;
 }
 .questions .line {
   background: url("images/lineB.png");
@@ -111,7 +166,7 @@ body {
   background-size: 89%;
   position: absolute;
   left: -100px;
-  top: 45px;
+  top: 44.8px;
 }
 .questions .line:nth-child(2) {
   top: 116px;

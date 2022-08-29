@@ -1,12 +1,14 @@
 body {
-  background-image: url("images/bg_home_screen.jpg");
+  background-color: #170557;
 }
 .main-container {
-  width: 100%;
-  max-width: 1280px;
+  background-image: url("images/bg_home_screen.jpg");
+  width: 1300px;
   margin: auto;
+  padding: 80px;
+  background-position-x: -235px;
+  background-repeat: no-repeat;
 
-  padding-top: 20px;
   .container {
     max-width: 1280px;
     width: 100%;
@@ -17,12 +19,50 @@ body {
       display: flex;
       justify-content: space-around;
       .joker {
-        cursor: pointer;
+        #audience {
+          background-image: url("images/friend.png");
+          width: 90px;
+          height: 58px;
+          overflow: hidden;
+          position: relative;
+          cursor: pointer;
+          border: none;
+          background-repeat: no-repeat;
+          border-radius: 30px;
+          background-size: 100%;
+          background-color: transparent;
+        }
+        #fifty {
+          background-image: url("images/50_50.png");
+          width: 90px;
+          height: 58px;
+          overflow: hidden;
+          position: relative;
+          cursor: pointer;
+          border: none;
+          background-repeat: no-repeat;
+          border-radius: 30px;
+          background-size: 100%;
+          background-color: transparent;
+        }
+        #phone-call {
+          background-image: url("images/call.png");
+          width: 90px;
+          height: 58px;
+          overflow: hidden;
+          position: relative;
+          cursor: pointer;
+          border: none;
+          background-repeat: no-repeat;
+          border-radius: 30px;
+          background-size: 100%;
+          background-color: transparent;
+        }
       }
     }
   }
   .timer {
-    width: 245px;
+    width: 230px;
   }
   #money {
     position: relative;
@@ -93,14 +133,33 @@ body {
     padding-top: 20px;
     .answer {
       margin: auto;
-      width: 382px;
-      height: 52px;
-      overflow: hidden;
-      position: relative;
-      cursor: pointer;
-      background: url("images/bg_answer.png");
-      background-size: 100%;
-      background-repeat: no-repeat;
+
+      button {
+        background: url("images/bg_answer.png");
+        width: 382px;
+        height: 52px;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        border: none;
+        color: white;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        border-radius: 30px;
+      }
+      button:hover {
+        background: url("images/bg_answer_selected.png");
+        width: 382px;
+        height: 52px;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        border: none;
+        color: white;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        border-radius: 30px;
+      }
     }
   }
   .line {
@@ -111,7 +170,7 @@ body {
     background-size: 89%;
     position: absolute;
     left: -100px;
-    top: 45px;
+    top: 44.8px;
   }
   .line:nth-child(2) {
     top: 116px;

@@ -9,8 +9,8 @@ const populateQuestions = (data) => {
 };
 
 const transformData = (data) => {
-  return data.map((questionObj) => {
-    const { question, correct_answer, incorrect_answers } = questionObj;
+  return data.map((questionObject) => {
+    const { question, correct_answer, incorrect_answers } = questionObject;
 
     incorrect_answers.push(correct_answer);
 

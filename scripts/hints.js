@@ -8,18 +8,18 @@ const fiftyFiftyHint = () => {
       current_question.correct_answer
     );
 
-    const rndIndex = Math.floor(Math.random() * 4);
+    const randomIndex = Math.floor(Math.random() * 4);
 
-    if (rndIndex !== correct_answer_index) {
-      current_question.answers.splice(rndIndex, 1);
+    if (randomIndex !== correct_answer_index) {
+      current_question.answers.splice(randomIndex, 1);
     }
   }
 };
 
 const callAFriend = () => {
-  const rndGuess = Math.random();
+  const randomGuess = Math.random();
   const current_question = questions[0];
-  const rndIndex = Math.floor(Math.random() * 4);
+  const randomIndex = Math.floor(Math.random() * 4);
   let result;
   const quotes = [
     "Hi, my old friend this is a tought questions but I think that the correct answer is",
@@ -28,10 +28,10 @@ const callAFriend = () => {
     "Hi, I believe the correct one is",
   ];
 
-  if (rndGuess < 0.5) {
-    return `${quotes[rndIndex]}${current_question.correct_answer}`;
-  } else if (rndGuess >= 0.5 && rndGuess <= 0.9) {
-    return `${quotes[rndIndex]}${current_question.answers[rndIndex]}`;
+  if (randomGuess < 0.5) {
+    return `${quotes[randomIndex]}${current_question.correct_answer}`;
+  } else if (randomGuess >= 0.5 && randomGuess <= 0.9) {
+    return `${quotes[randomIndex]}${current_question.answers[randomIndex]}`;
   } else {
     return "I really don't know the answer";
   }
@@ -39,7 +39,7 @@ const callAFriend = () => {
 
 const askTheAudience = () => {
   const current_question = questions[0];
-  let rndIndex = Math.floor(Math.random() * current_question.answers.length);
+  let randomIndex = Math.floor(Math.random() * current_question.answers.length);
 
   let audiencePercentage = {};
   audiencePercentage = current_question.answers.reduce((accumulator, value) => {
@@ -49,8 +49,8 @@ const askTheAudience = () => {
   audiencePercentage[current_question.correct_answer] = 50;
 
   for (let i = 0; i < 50; i++) {
-    rndIndex = Math.floor(Math.random() * current_question.answers.length);
-    audiencePercentage[current_question.answers[rndIndex]] += 1;
+    randomIndex = Math.floor(Math.random() * current_question.answers.length);
+    audiencePercentage[current_question.answers[randomIndex]] += 1;
   }
   return audiencePercentage;
 };
