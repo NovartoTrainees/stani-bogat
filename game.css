@@ -90,6 +90,15 @@ body {
   align-items: center;
   color: #ffb600;
 }
+.main-container #money .current-sum {
+  background: url("images/sum_bg_selected.png");
+  width: 195px;
+  height: 35px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
+}
 .main-container #money .number {
   width: 16px;
   text-align: right;
