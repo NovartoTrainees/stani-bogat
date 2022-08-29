@@ -176,3 +176,13 @@ body {
     top: 116px;
   }
 }
+
+.modal-back {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  width: 100%;
+  height: 100%;
+}
