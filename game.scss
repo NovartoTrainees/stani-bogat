@@ -1,0 +1,204 @@
+body {
+  background-color: #170557;
+}
+.main-container {
+  background-image: url("images/bg_home_screen.jpg");
+  width: 1300px;
+  margin: auto;
+  padding: 80px;
+  background-position-x: -235px;
+  background-repeat: no-repeat;
+
+  .container {
+    max-width: 1280px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    .jokers {
+      display: flex;
+      justify-content: space-around;
+      .joker {
+        #audience {
+          background-image: url("images/friend.png");
+          width: 90px;
+          height: 58px;
+          overflow: hidden;
+          position: relative;
+          cursor: pointer;
+          border: none;
+          background-repeat: no-repeat;
+          border-radius: 30px;
+          background-size: 100%;
+          background-color: transparent;
+        }
+        #fifty {
+          background-image: url("images/50_50.png");
+          width: 90px;
+          height: 58px;
+          overflow: hidden;
+          position: relative;
+          cursor: pointer;
+          border: none;
+          background-repeat: no-repeat;
+          border-radius: 30px;
+          background-size: 100%;
+          background-color: transparent;
+        }
+        #phone-call {
+          background-image: url("images/call.png");
+          width: 90px;
+          height: 58px;
+          overflow: hidden;
+          position: relative;
+          cursor: pointer;
+          border: none;
+          background-repeat: no-repeat;
+          border-radius: 30px;
+          background-size: 100%;
+          background-color: transparent;
+        }
+      }
+    }
+  }
+  .timer {
+    width: 230px;
+  }
+  #money {
+    position: relative;
+    min-width: 240px;
+    margin-bottom: 50px;
+    font-weight: 900;
+    ol {
+      color: #e1a02e;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      box-sizing: border-box;
+      justify-content: space-evenly;
+      font-size: 20px;
+      align-items: flex-end;
+    }
+    li {
+      background: url("images/sum_bg.png");
+      width: 195px;
+      height: 35px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      color: #ffb600;
+    }
+    .number {
+      width: 16px;
+      text-align: right;
+      margin-left: 30px;
+    }
+    .money {
+      padding-left: 25px;
+    }
+  }
+}
+.questions {
+  .main-question-container {
+    width: 900px;
+    margin: auto;
+  }
+  .main-question {
+    width: 940px;
+    height: 103px;
+    background: url("images/bg_question.png");
+    box-shadow: inset 116px 0px 48px -65px #180558,
+      inset -116px 0px 48px -65px #180558;
+    background-position-x: center;
+    color: white;
+    padding: 20px 160px;
+    box-sizing: border-box;
+    font-size: 18px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    line-height: 28px;
+    display: table-cell;
+    vertical-align: middle;
+    overflow-wrap: anywhere;
+  }
+  .answers {
+    width: 850px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 20px 0;
+    margin: auto;
+    position: relative;
+    padding-top: 20px;
+    .answer {
+      margin: auto;
+
+      button {
+        background: url("images/bg_answer.png");
+        width: 382px;
+        height: 52px;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        border: none;
+        color: white;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        border-radius: 30px;
+      }
+      button:hover {
+        background: url("images/bg_answer_selected.png");
+        width: 382px;
+        height: 52px;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        border: none;
+        color: white;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        border-radius: 30px;
+      }
+      .selected{
+        background: url("images/bg_answer_selected.png");
+        width: 382px;
+        height: 52px;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        border: none;
+        color: white;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        border-radius: 30px;
+      }
+      .correctg{
+        background: url("images/answer_correct.png");
+        width: 382px;
+        height: 52px;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        border: none;
+        color: white;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        border-radius: 30px;
+      }
+    }
+  }
+  .line {
+    background: url("images/lineB.png");
+    width: 1180px;
+    height: 2px;
+    background-repeat: no-repeat;
+    background-size: 89%;
+    position: absolute;
+    left: -100px;
+    top: 44.8px;
+  }
+  .line:nth-child(2) {
+    top: 116px;
+  }
+}
