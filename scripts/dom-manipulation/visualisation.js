@@ -4,18 +4,18 @@ import { questions } from "../variables.js";
 
 export function Visualise() {
   MainQuestion();
+  Answer(current_question.answers[0], elements.quiz.answerA);
+  Answer(current_question.answers[1], elements.quiz.answerB);
+  Answer(current_question.answers[2], elements.quiz.answerC);
+  Answer(current_question.answers[3], elements.quiz.answerD);
 }
 
 function MainQuestion() {
   const current_question = questions[0];
-  console.log("Visualise", current_question);
-  elements.mainQuestion.innerHTML = current_question.question;
-
-  current_question.answers.forEach((answer, i) => {
-    Answer(answer, elements.answerContainers[i]);
-  });
+  // console.log("Visualise", current_question);
+  elements.quiz.question.innerHTML = current_question.question;
 }
 
 function Answer(string, container) {
-  container.children[0].innerHTML = string;
+  container.innerHTML = string;
 }
