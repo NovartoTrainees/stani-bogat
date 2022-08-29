@@ -178,6 +178,7 @@ body {
 }
 .modal-back {
   display: flex;
+  flex-direction: row;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -188,6 +189,15 @@ body {
   height: 100%;
 }
 
+.bar-container {
+  background-image: url("/images/audience.png");
+  width: 355px;
+  height: 369px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .bar {
   background-image: url("/images/bar.jpg");
   height: 100px;
@@ -195,8 +205,9 @@ body {
 }
 
 .mask {
-  background-image: url("/images/bg_home_screen.jpg");
-  position: absolute;
+  background-image: url("/images/audience.png");
+  background-position: center;
+  // position: absolute;
   width: 100%;
   height: 100%;
 }

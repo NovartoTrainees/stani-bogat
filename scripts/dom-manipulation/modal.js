@@ -5,8 +5,11 @@
  */
 export function CreateCrowdHelpModal(percentages) {
   const modal = document.createElement("div");
-
   const barContainer = document.createElement("div");
+
+  AppendBars(barContainer);
+
+  barContainer.classList.add("bar-container");
 
   modal.appendChild(barContainer);
   modal.classList.add("modal-back");
