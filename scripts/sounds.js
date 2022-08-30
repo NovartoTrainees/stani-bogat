@@ -28,13 +28,9 @@ export function PlayLetsPlaySound() {
 export function PlayMainTheme() {
   return PlayAudioFile("sounds/main-theme.mp3");
 }
+
 function PlayAudioFile(audioName) {
   const audio = new Audio(audioName);
-  audio.play()
-  return {
-    audio: audio,
-    stop: function(this){
-      this.audio.remove()
-    }
-  }
+  audio.play();
+  return audio;
 }

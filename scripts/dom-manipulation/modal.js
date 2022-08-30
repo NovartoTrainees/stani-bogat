@@ -29,3 +29,10 @@ function AppendBars(barContainer) {
     barContainer.appendChild(bar);
   }
 }
+
+export class Modal extends HTMLDivElement {
+  constructor(backgroundURL) {
+    this.style.backgroundImage = `url(${backgroundURL})`;
+    this.style.display = "flex";
+  }
+}
