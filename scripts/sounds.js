@@ -33,7 +33,7 @@ function PlayAudioFile(audioName) {
   audio.play();
   return {
     audio: audio,
-    stop: () => {
+    stop: (this) => {
       this.audio.remove();
     },
   };
