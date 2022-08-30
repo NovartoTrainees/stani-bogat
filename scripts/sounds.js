@@ -32,9 +32,9 @@ function PlayAudioFile(audioName) {
   const audio = new Audio(audioName);
   audio.play();
   return {
-    audio: audio,
-    stop: (this) => {
-      this.audio.remove();
+    audioFile: audio,
+    stop: function () {
+      this.audioFile.remove();
     },
   };
 }
