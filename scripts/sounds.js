@@ -11,16 +11,23 @@ export function PlayWrongAnswer() {
   return PlayAudioFile("sounds/phone-a-friend.mp3");
 }
 export function PlayHundredToThousand() {
-  return PlayAudioFile("sounds/soundQuestionFrom100To1000.mp3");
+  const audio = PlayAudioFile("sounds/soundQuestionFrom100To1000.mp3");
+  audio.loop = true;
 }
 export function PlayThousandToFiftyThousand() {
-  return PlayAudioFile("sounds/soundQuestionFrom1000To50000.mp3");
+  const audio = PlayAudioFile("sounds/soundQuestionFrom1000To50000.mp3");
+  audio.loop = true;
+  return audio;
 }
 export function PlayFiftyThousand() {
-  return PlayAudioFile("sounds/soundQuestion50000.mp3");
+  const audio = PlayAudioFile("sounds/soundQuestion50000.mp3");
+  audio.loop = true;
+  return audio;
 }
 export function PlayOneHundredThousand() {
-  return PlayAudioFile("sounds/soundQuestion100000.mp3");
+  const audio = PlayAudioFile("sounds/soundQuestion100000.mp3");
+  audio.loop = true;
+  return audio;
 }
 export function PlayLetsPlaySound() {
   return PlayAudioFile("sounds/lets-play.mp3");
