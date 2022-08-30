@@ -64,7 +64,13 @@ const askTheAudience = () => {
     randomIndex = Math.floor(Math.random() * current_question.answers.length);
     audiencePercentage[current_question.answers[randomIndex]] += 1;
   }
-  return audiencePercentage;
+
+  const audiencePercentageValues = Object.keys(audiencePercentage)
+    .map(function(key) {
+        return audiencePercentage[key];
+    });
+  
+  return audiencePercentageValues;
 };
 
 export { fiftyFiftyHint, callAFriend, askTheAudience };
