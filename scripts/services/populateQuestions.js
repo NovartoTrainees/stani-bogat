@@ -1,17 +1,21 @@
-import { questions } from "../variables.js";
+import { questions, questionsDifficulty } from "../variables.js";
 
 const populateQuestions = (data) => {
+  console.log(data);
+
   const transformed_data = transformData(data);
 
   transformed_data.forEach((question) => questions.push(question));
-
-  console.log(questions);
+  
+  questionsDifficulty.shift();
 };
 
 const transformData = (data) => {
   return data.map((questionObject) => {
-    const { question, correct_answer, incorrect_answers } = questionObject;
-
+    let { question, correct_answer, incorrect_answers } = questionObject;
+    let dummyAnswer = document.getElementById('dummyAnswer');
+    dummyAnswer.innerHTML = correct_answer;
+    correct_answer = dummyAnswer.textContent;
     incorrect_answers.push(correct_answer);
 
     return {

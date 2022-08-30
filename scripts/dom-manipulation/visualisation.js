@@ -1,21 +1,24 @@
 import * as elements from "./elements.js";
-import fetchQuestions from "../services/fetchQuestions.js";
 import { questions } from "../variables.js";
 
-export function Visualise() {
-  MainQuestion();
-}
+function renderNextQuestionAndAnswers() {
 
-function MainQuestion() {
-  const current_question = questions[0];
-  console.log("Visualise", current_question);
-  elements.mainQuestion.innerHTML = current_question.question;
+  console.log(questions[0]);
+  renderQuestion();
 
-  current_question.answers.forEach((answer, i) => {
-    Answer(answer, elements.answerContainers[i]);
+  elements.answerArray.forEach((answerButton, index) => {
+    answerButton.innerHTML = questions[0].answers[index];
+    answerButton.classList.remove("correct");
+    answerButton.classList.remove("selected");
+    answerButton.classList.remove("disabled");
+
   });
 }
 
-function Answer(string, container) {
-  container.children[0].innerHTML = string;
+function renderQuestion() {
+  const current_question = questions[0];
+
+  elements.quiz.question.innerHTML = current_question.question;
 }
+
+export default renderNextQuestionAndAnswers;
