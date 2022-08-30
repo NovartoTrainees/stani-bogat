@@ -30,11 +30,11 @@ export function PlayMainTheme() {
 }
 function PlayAudioFile(audioName) {
   const audio = new Audio(audioName);
-  audio.play()
+  audio.play();
   return {
     audio: audio,
-    stop: function(this){
-      this.audio.remove()
-    }
-  }
+    stop: () => {
+      this.audio.remove();
+    },
+  };
 }
