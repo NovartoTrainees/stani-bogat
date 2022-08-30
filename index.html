@@ -10,7 +10,11 @@
   <body>
     <div class="main-container">
       <div class="container">
-        <div class="timer"></div>
+        <div class="timer">
+          <div class="exit-button-block">
+            <button id="exit-button">Exit</button>
+          </div>
+        </div>
         <div class="main">
           <div class="jokers">
             <div class="joker">
@@ -29,7 +33,7 @@
         </div>
         <div id="money">
           <ol reversed>
-            <li class="current sum">
+            <li class="sum">
               <span class="number">15</span>
               <span class="money">100 000 лв.</span>
             </li>
@@ -85,7 +89,7 @@
               <span class="number">2</span>
               <span class="money">200 лв.</span>
             </li>
-            <li class="sum">
+            <li class="current-sum sum">
               <span class="number">1</span>
               <span class="money">100 лв.</span>
             </li>
@@ -100,6 +104,7 @@
           <div class="line"></div>
           <div class="line"></div>
 
+          <div id="dummyAnswer" style="display: none"></div>
           <div class="answer"><button class="answer-holder"></button></div>
           <div class="answer"><button class="answer-holder"></button></div>
           <div class="answer"><button class="answer-holder"></button></div>
