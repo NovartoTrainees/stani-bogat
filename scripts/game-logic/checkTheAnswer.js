@@ -19,9 +19,8 @@ elements.quiz.answerD.addEventListener("click", checkTheAnswer);
 function checkTheAnswer(event) {
     elements.answerArray.forEach((button) => {
         button.classList.add("disabled");
-
-        // stop hover
     });
+
     const current_question = questions[0];
     const isCorrectAnswer =
         current_question.correct_answer === event.target.textContent;
@@ -38,12 +37,6 @@ function checkTheAnswer(event) {
             }
             updateStage();
             incrementQuestionIndex();
-
-
-
-            // manipulate stage
-            // get last sum
-            // check for sigurna suma
 
             setTimeout(() => {
                 // sounds
