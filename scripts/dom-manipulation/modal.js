@@ -30,9 +30,28 @@ function AppendBars(barContainer) {
   }
 }
 
-export class Modal extends HTMLDivElement {
-  constructor(backgroundURL) {
-    this.style.backgroundImage = `url(${backgroundURL})`;
-    this.style.display = "flex";
+class Modal extends HTMLDivElement {
+  constructor() {
+    super();
+    this.classList.add("modal-back");
+    this.window = document.createElement("div");
+    this.window.classList.add("modal-window");
+    this.append(this.window);
   }
 }
+
+export class AudienceModal extends Modal {
+  constructor(percentages) {
+    super();
+    console.log(this);
+    this.window.classList.add("audience");
+  }
+}
+
+window.customElements.define("custom-modal", Modal, {
+  extends: "div",
+});
+
+window.customElements.define("audience-modal", AudienceModal, {
+  extends: "div",
+});

@@ -6,9 +6,10 @@ import * as elements from "./dom-manipulation/elements.js";
 import { onExit } from "./game-logic/exit.js";
 import { temp } from "./game-logic/stairwayStages.js";
 import * as audio from "./sounds.js";
+import { AudienceModal } from "./dom-manipulation/modal.js";
 
 await fetchQuestions();
 
 renderNextQuestionAndAnswers();
-const obj = audio.PlayCorrectAnswer();
-obj.audioFile.pause();
+
+document.body.appendChild(new AudienceModal([0, 0, 0, 0]));

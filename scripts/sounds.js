@@ -38,6 +38,5 @@ export function PlayMainTheme() {
 
 function PlayAudioFile(audioName) {
   const audio = new Audio(audioName);
-  audio.play();
   return audio;
 }

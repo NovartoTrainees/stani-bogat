@@ -116,8 +116,7 @@ body {
   width: 940px;
   height: 103px;
   background: url("images/bg_question.png");
-  box-shadow: inset 116px 0px 48px -65px #180558,
-    inset -116px 0px 48px -65px #180558;
+  box-shadow: inset 116px 0px 48px -65px #180558, inset -116px 0px 48px -65px #180558;
   background-position-x: center;
   color: white;
   padding: 20px 160px;
@@ -168,7 +167,6 @@ body {
   background-repeat: no-repeat;
   border-radius: 30px;
 }
-
 .questions .answers .answer .selected {
   background: url("images/bg_answer_selected.png");
   width: 382px;
@@ -181,10 +179,6 @@ body {
   background-size: 100%;
   background-repeat: no-repeat;
   border-radius: 30px;
-}
-.questions .answers .answer .disabled {
-  pointer-events: none;
-  opacity: 1;
 }
 .questions .answers .answer .correct {
   background: url("images/answer_correct.png");
@@ -213,7 +207,68 @@ body {
   top: 116px;
 }
 
-.questions .answers .answer .noHover:hover {
-  background-image: none;
+.modal-back {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  z-index: 5;
 }
+
+.modal-window {
+  width: 355px;
+  height: 369px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.audience {
+  background-image: url("/images/audience.png");
+}
+
+.one,
+.two,
+.three,
+.four {
+  position: absolute;
+  width: 30px;
+  height: 120px;
+  background-image: url("/images/bg.jpg");
+  transition-property: height;
+  transition-duration: 2s;
+}
+
+#onePercentage,
+#twoPercentage,
+#threePercentage,
+#fourPercentage {
+  position: absolute;
+  top: 110px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: white;
+  font-size: 1rem;
+  transition-property: top;
+  transition-duration: 2s;
+  margin-top: 90px;
+  text-align: center;
+}
+
+.playAnimation {
+  height: 250px;
+  top: 110px;
+}
+
+.bar {
+  width: 30px;
+  height: 100px;
+  background-image: url("./images/bar.jpg");
+}
+
 /*# sourceMappingURL=game.css.map */
