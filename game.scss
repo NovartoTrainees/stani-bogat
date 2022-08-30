@@ -1,3 +1,5 @@
+$game-yellow: #f1ab27;
+
 body {
   background-color: #170557;
 }
@@ -226,15 +228,51 @@ body {
 }
 
 .modal-window {
-  width: 355px;
-  height: 369px;
+  background-size: contain;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
+.continue-button-wrapper {
+  top: 185px;
+  position: relative;
+  border-radius: 50px;
+  width: 195px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+
+  background-repeat: no-repeat;
+  background-image: url("/images/buttonC.png");
+
+  .continue-button {
+    font-weight: 500;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    width: inherit;
+  }
+}
+
+.continue-button-wrapper:hover {
+  background-image: url("/images/buttonCH.png");
+}
+
+.continue-button:hover {
+  color: $game-yellow;
+  transition: 0.5s;
+}
+
 .audience {
   background-image: url("/images/audience.png");
+}
+
+.friend {
+  background-image: url("/images/call_friend.png");
 }
 
 .one,

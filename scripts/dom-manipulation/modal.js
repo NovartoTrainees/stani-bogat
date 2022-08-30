@@ -1,57 +1,44 @@
-/**
- *
- * @param {[float, float, float, float]} percentages
- * @output Modal Element
- */
-export function CreateCrowdHelpModal(percentages) {
-  const modal = document.createElement("div");
-  const barContainer = document.createElement("div");
-
-  AppendBars(barContainer);
-
-  barContainer.classList.add("bar-container");
-
-  modal.appendChild(barContainer);
-  modal.classList.add("modal-back");
-
-  return modal;
-}
-
-function AppendBars(barContainer) {
-  for (let i = 0; i < 4; i++) {
-    const bar = document.createElement("div");
-    bar.classList.add("bar");
-
-    const mask = document.createElement("div");
-    mask.classList.add("mask");
-
-    bar.appendChild(mask);
-    barContainer.appendChild(bar);
-  }
-}
-
 class Modal extends HTMLDivElement {
   constructor() {
     super();
-    this.classList.add("modal-back");
     this.window = document.createElement("div");
+    this.continueButtonWrapper = document.createElement("div");
+    this.continueButton = document.createElement("button");
+
+    this.classList.add("modal-back");
     this.window.classList.add("modal-window");
-    this.append(this.window);
+    this.continueButtonWrapper.classList.add("continue-button-wrapper");
+    this.continueButton.classList.add("continue-button");
+    this.continueButton.textContent = "CONTINUE";
+
+    this.continueButton.addEventListener("click", () => {
+      this.remove();
+    });
+
+    this.continueButtonWrapper.appendChild(this.continueButton);
+    this.window.appendChild(this.continueButtonWrapper);
+    this.appendChild(this.window);
   }
 }
 
 export class AudienceModal extends Modal {
   constructor(percentages) {
     super();
-    console.log(this);
     this.window.classList.add("audience");
   }
 }
 
-window.customElements.define("custom-modal", Modal, {
+export class CallFriend extends Modal {
+  constructor(answer) {
+    super();
+    this.window.classList.add("friend");
+  }
+}
+
+window.customElements.define("audience-modal", AudienceModal, {
   extends: "div",
 });
 
-window.customElements.define("audience-modal", AudienceModal, {
+window.customElements.define("friend-modal", CallFriend, {
   extends: "div",
 });
