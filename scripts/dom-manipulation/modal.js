@@ -31,6 +31,15 @@ export class CallFriend extends Modal {
   constructor(answer) {
     super();
     this.window.id = "modal-friend";
+    this.container = document.createElement("div");
+    this.heading = document.createElement("h3");
+    this.hint = document.createElement("p");
+    this.hint.textContent = answer;
+    this.heading.textContent = "Your friend says";
+
+    this.container.appendChild(this.heading);
+    this.container.appendChild(this.hint);
+    this.window.appendChild(this.container);
   }
 }
 
