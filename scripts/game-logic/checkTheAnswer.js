@@ -19,9 +19,11 @@ elements.quiz.answerD.addEventListener("click", checkTheAnswer);
 function checkTheAnswer(event) {
     elements.answerArray.forEach((button) => {
         button.classList.add("disabled");
-
-        // stop hover
+        button.parentElement.classList.add("disabled")
+        console.log(button.parentElement)
     });
+
+
     const current_question = questions[0];
     const isCorrectAnswer =
         current_question.correct_answer === event.target.textContent;

@@ -11,6 +11,7 @@ function renderNextQuestionAndAnswers() {
     answerButton.classList.remove("correct");
     answerButton.classList.remove("selected");
     answerButton.classList.remove("disabled");
+    answerButton.parentElement.classList.remove("disabled")
 
   });
 }
