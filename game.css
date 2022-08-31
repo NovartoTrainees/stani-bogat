@@ -6,7 +6,7 @@ body {
 
 .main-container {
   background-image: url("images/bg_home_screen.jpg");
-  max-width: 1518px;
+  width: 1518px;
   margin: auto;
   background-position-y: -70px;
   background-position-x: -215px;
