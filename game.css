@@ -382,14 +382,17 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-image: url("/images/badge-modal-bg.png");
   background-repeat: no-repeat;
 }
 .win-modal > img {
   margin-top: 37px;
+  margin-bottom: 60px;
 }
-
-#win-silver {
-  background-image: url("/images/badge-modal-bg.png");
+.win-modal > p {
+  margin-left: 15px;
+  margin-right: 15px;
+  text-align: center;
 }
 
 .continue-button-wrapper {

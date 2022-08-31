@@ -9,19 +9,20 @@ import * as audio from "./sounds.js";
 import { startGame } from "./game-logic/play.js";
 import {
   AudienceModal,
+  Bronze,
   CallFriend,
+  Elite,
   FirstStage,
   GameOver,
+  Gold,
   Silver,
 } from "./dom-manipulation/modal.js";
-
 
 await fetchQuestions();
 
 renderNextQuestionAndAnswers();
 
-document.body.appendChild(new AudienceModal([0, 0, 0, 0]));
-document.body.appendChild(new CallFriend("hint"));
-document.body.appendChild(new GameOver());
-document.body.appendChild(new FirstStage());
-document.body.appendChild(new Silver(10000));
+document.body.appendChild(new Silver("$10,000"));
+document.body.appendChild(new Bronze("$20,000"));
+document.body.appendChild(new Elite("$30,000"));
+document.body.appendChild(new Gold("$40,000"));
