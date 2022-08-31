@@ -9,7 +9,9 @@ import * as audio from "./sounds.js";
 import {
   AudienceModal,
   CallFriend,
+  FirstStage,
   GameOver,
+  Silver,
 } from "./dom-manipulation/modal.js";
 
 await fetchQuestions();
@@ -19,3 +21,5 @@ renderNextQuestionAndAnswers();
 document.body.appendChild(new AudienceModal([0, 0, 0, 0]));
 document.body.appendChild(new CallFriend("hint"));
 document.body.appendChild(new GameOver());
+document.body.appendChild(new FirstStage());
+document.body.appendChild(new Silver(10000));

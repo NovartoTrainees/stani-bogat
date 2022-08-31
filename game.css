@@ -251,6 +251,36 @@ body {
   margin-left: 15px;
 }
 
+#modal-stage-one {
+  width: 346px;
+  height: 271px;
+  background-image: url("/images/popUpSafety.png");
+  background-repeat: no-repeat;
+}
+#modal-stage-one > * {
+  transform: translateY(50px);
+  margin-left: 15px;
+}
+#modal-stage-one p {
+  max-width: 191px;
+}
+
+.win-modal {
+  width: 355px;
+  height: 618px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-repeat: no-repeat;
+}
+.win-modal > img {
+  margin-top: 37px;
+}
+
+#win-silver {
+  background-image: url("/images/badge-modal-bg.png");
+}
+
 .continue-button-wrapper {
   margin: auto;
   transform: translateY(-22.5px);
