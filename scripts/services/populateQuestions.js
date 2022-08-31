@@ -6,7 +6,7 @@ const populateQuestions = (data) => {
   const transformed_data = transformData(data);
 
   transformed_data.forEach((question) => questions.push(question));
-  
+
   questionsDifficulty.shift();
 };
 
@@ -16,6 +16,13 @@ const transformData = (data) => {
     let dummyAnswer = document.getElementById('dummyAnswer');
     dummyAnswer.innerHTML = correct_answer;
     correct_answer = dummyAnswer.textContent;
+    
+    incorrect_answers.forEach(answer => {
+      let currentIncorrectAnswer = incorrect_answers.shift();
+      dummyAnswer.innerHTML = currentIncorrectAnswer;
+      currentIncorrectAnswer = dummyAnswer.textContent;
+      incorrect_answers.push(currentIncorrectAnswer);
+    })
     incorrect_answers.push(correct_answer);
 
     return {

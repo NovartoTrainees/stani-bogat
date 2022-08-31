@@ -1,6 +1,9 @@
 import { questions } from "./variables.js";
+import * as elements from "./dom-manipulation/elements.js";
 
-const fiftyFiftyHint = () => {
+elements.hints.fiftyFifty.addEventListener('click', fiftyFiftyHint);
+
+function fiftyFiftyHint() {
   const current_question = questions[0];
 
   while (current_question.answers.length > 2) {
@@ -14,6 +17,15 @@ const fiftyFiftyHint = () => {
       current_question.answers.splice(randomIndex, 1);
     }
   }
+
+  elements.answerArray.forEach((button) => {
+    if (!current_question.answers.includes(button.textContent)) {
+      button.textContent = '';
+      button.classList.add('disabled');
+    }
+  });
+
+  elements.hints.fiftyFifty.disabled = true;
 };
 
 const callAFriend = () => {
@@ -52,7 +64,13 @@ const askTheAudience = () => {
     randomIndex = Math.floor(Math.random() * current_question.answers.length);
     audiencePercentage[current_question.answers[randomIndex]] += 1;
   }
-  return audiencePercentage;
+
+  const audiencePercentageValues = Object.keys(audiencePercentage)
+    .map(function(key) {
+        return audiencePercentage[key];
+    });
+  
+  return audiencePercentageValues;
 };
 
 export { fiftyFiftyHint, callAFriend, askTheAudience };

@@ -1,14 +1,14 @@
-const [crowd, fiftyfifty, callFriend] = [
-  document.getElementById("crowdHint"),
-  document.getElementById("fiftyFiftyHint"),
-  document.getElementById("callFriendHint")
+const [crowd, fiftyFifty, callFriend] = [
+  document.getElementById("audience"),
+  document.getElementById("fifty"),
+  document.getElementById("phone-call")
 ];
 
 export const exitButton = document.getElementById("exit-button");
 
 export const hints = {
   crowd: crowd,
-  fiftyfifty: fiftyfifty,
+  fiftyFifty: fiftyFifty,
   callFriend: callFriend
 };
 
