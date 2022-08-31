@@ -288,14 +288,23 @@ body {
 .two,
 .three,
 .four {
-  position: absolute;
+  position: relative;
+  top: -50px;
+  left: 30px;
   width: 30px;
-  height: 120px;
-  background-image: url("/images/bg.jpg");
-  transition-property: height;
-  transition-duration: 2s;
+  height: 100px;
+  background-color: #170557;
+  animation: mymove 2s ease-out;
 }
 
+@keyframes mymove {
+  from {
+    top: 0px;
+  }
+  to {
+    top: -40px;
+  }
+}
 #onePercentage,
 #twoPercentage,
 #threePercentage,
@@ -311,15 +320,15 @@ body {
   text-align: center;
 }
 
-.playAnimation {
-  height: 250px;
-  top: 110px;
-}
-
 .bar {
+  position: relative;
+  top: 160px;
+  left: 30px;
   width: 30px;
   height: 100px;
   background-image: url("./images/bar.jpg");
+  transition-property: height;
+  transition-duration: 2s;
 }
 
 /*# sourceMappingURL=game.css.map */

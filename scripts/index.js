@@ -16,6 +16,6 @@ await fetchQuestions();
 
 renderNextQuestionAndAnswers();
 
-// document.body.appendChild(new AudienceModal([0, 0, 0, 0]));
-// document.body.appendChild(new CallFriend("hint"));
+ document.body.appendChild(new AudienceModal([50]));
+//document.body.appendChild(new CallFriend("hint"));
 // document.body.appendChild(new GameOver());

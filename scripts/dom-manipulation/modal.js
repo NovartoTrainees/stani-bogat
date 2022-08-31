@@ -24,6 +24,22 @@ export class AudienceModal extends Modal {
   constructor(percentages) {
     super();
     this.window.id = "modal-audience";
+    const container = document.createElement("div");
+    const bar1 = document.createElement("div");
+    const mask1 = document.createElement("div");
+    bar1.classList.add("bar")
+    mask1.classList.add("one")
+
+    container.appendChild(bar1);
+    container.appendChild(mask1);
+    this.window.appendChild(container)
+
+    function changeWidth(percentages) {
+      mask1.style.top= -`${percentages}` + 'px';// mask`s end point
+      console.log("test", container.childNodes);
+    }
+
+      changeWidth(20);
   }
 }
 
@@ -60,13 +76,13 @@ export class GameOver extends Modal {
 }
 
 window.customElements.define("audience-modal", AudienceModal, {
-  extends: "div",
+  extends: "div"
 });
 
 window.customElements.define("friend-modal", CallFriend, {
-  extends: "div",
+  extends: "div"
 });
 
 window.customElements.define("game-over-modal", GameOver, {
-  extends: "div",
+  extends: "div"
 });
