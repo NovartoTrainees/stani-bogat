@@ -2,6 +2,8 @@ import { questions } from "./variables.js";
 import * as elements from "./dom-manipulation/elements.js";
 
 elements.hints.fiftyFifty.addEventListener('click', fiftyFiftyHint);
+elements.hints.callFriend.addEventListener('click', callAFriend);
+elements.hints.crowd.addEventListener('click', askTheAudience);
 
 function fiftyFiftyHint() {
   const current_question = questions[0];
@@ -28,28 +30,34 @@ function fiftyFiftyHint() {
   elements.hints.fiftyFifty.disabled = true;
 };
 
-const callAFriend = () => {
+function callAFriend() {
   const randomGuess = Math.random();
   const current_question = questions[0];
-  const randomIndex = Math.floor(Math.random() * 4);
-  let result;
+  const randomIndex = Math.floor(Math.random() * current_question.answers.length);
+  const answerToLetterReference = {
+    0: 'A',
+    1: 'B',
+    2: 'C',
+    3: 'D'
+  }
+
   const quotes = [
-    "Hi, my old friend this is a tought questions but I think that the correct answer is",
-    "I will need more time to think about it but I'm pretty sure that you have to mark",
+    "Hi, my old friend! This is a tough question but I think that the correct answer is",
+    "I'm pretty sure that you have to mark",
     "Please go and push",
     "Hi, I believe the correct one is",
   ];
 
   if (randomGuess < 0.5) {
-    return `${quotes[randomIndex]}${current_question.correct_answer}`;
+    return console.log(`${quotes[randomIndex]} ${current_question.correct_answer}`);
   } else if (randomGuess >= 0.5 && randomGuess <= 0.9) {
-    return `${quotes[randomIndex]}${current_question.answers[randomIndex]}`;
+    return console.log(`${quotes[randomIndex]} ${current_question.answers[randomIndex]}`);
   } else {
     return "I really don't know the answer";
   }
 };
 
-const askTheAudience = () => {
+function askTheAudience() {
   const current_question = questions[0];
   let randomIndex = Math.floor(Math.random() * current_question.answers.length);
 
@@ -66,10 +74,10 @@ const askTheAudience = () => {
   }
 
   const audiencePercentageValues = Object.keys(audiencePercentage)
-    .map(function(key) {
-        return audiencePercentage[key];
+    .map(function (key) {
+      return audiencePercentage[key];
     });
-  
+
   return audiencePercentageValues;
 };
 
