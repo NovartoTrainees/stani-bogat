@@ -34,12 +34,6 @@ function callAFriend() {
   const randomGuess = Math.random();
   const current_question = questions[0];
   const randomIndex = Math.floor(Math.random() * current_question.answers.length);
-  const answerToLetterReference = {
-    0: 'A',
-    1: 'B',
-    2: 'C',
-    3: 'D'
-  }
 
   const quotes = [
     "Hi, my old friend! This is a tough question but I think that the correct answer is",
@@ -48,10 +42,22 @@ function callAFriend() {
     "Hi, I believe the correct one is",
   ];
 
+  const answerToLetterReference = {
+    0: 'A',
+    1: 'B',
+    2: 'C',
+    3: 'D'
+  };
+
+  //Converting Node list into an array and linking its index to a letter
+
+  const correctAnswerLetter = answerToLetterReference[Array.from(elements.answerArray).map(btn => btn.textContent).indexOf(current_question.correct_answer)];
+  const incorrectAnswerLetter = answerToLetterReference[Array.from(elements.answerArray).map(btn => btn.textContent).indexOf(current_question.answers[randomIndex])];
+
   if (randomGuess < 0.5) {
-    return console.log(`${quotes[randomIndex]} ${current_question.correct_answer}`);
+    return `${quotes[randomIndex]} ${correctAnswerLetter}`;
   } else if (randomGuess >= 0.5 && randomGuess <= 0.9) {
-    return console.log(`${quotes[randomIndex]} ${current_question.answers[randomIndex]}`);
+    return `${quotes[randomIndex]} ${incorrectAnswerLetter}`;
   } else {
     return "I really don't know the answer";
   }
