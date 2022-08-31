@@ -214,6 +214,7 @@ body {
   }
 }
 .modal-back {
+  color: whitesmoke;
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -235,6 +236,9 @@ body {
 #modal-friend {
   width: 355px;
   height: 315px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-image: url("/images/call_friend.png");
 }
 
@@ -251,8 +255,6 @@ body {
   background-image: url("/images/popUpStartAgain.png");
 
   > * {
-    color: whitesmoke;
-
     transform: translateY(70px);
     margin-left: 15px;
   }
