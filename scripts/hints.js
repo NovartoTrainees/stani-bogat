@@ -1,7 +1,10 @@
 import { questions } from "./variables.js";
 import * as elements from "./dom-manipulation/elements.js";
+import * as modals from "./dom-manipulation/modal.js";
 
 elements.hints.fiftyFifty.addEventListener('click', fiftyFiftyHint);
+elements.hints.callFriend.addEventListener('click',  callAFriend);
+// elements.hints.askTheAudience.addEventListener('click',  askTheAudience);
 
 function fiftyFiftyHint() {
   const current_question = questions[0];
@@ -28,7 +31,7 @@ function fiftyFiftyHint() {
   elements.hints.fiftyFifty.disabled = true;
 };
 
-const callAFriend = () => {
+function callAFriend() {
   const randomGuess = Math.random();
   const current_question = questions[0];
   const randomIndex = Math.floor(Math.random() * 4);
@@ -41,15 +44,15 @@ const callAFriend = () => {
   ];
 
   if (randomGuess < 0.5) {
-    return `${quotes[randomIndex]}${current_question.correct_answer}`;
+    return document.body.appendChild(new modals.CallFriend(`${quotes[randomIndex]}${current_question.correct_answer}`)) ;
   } else if (randomGuess >= 0.5 && randomGuess <= 0.9) {
-    return `${quotes[randomIndex]}${current_question.answers[randomIndex]}`;
+    return document.body.appendChild(new modals.CallFriend(`${quotes[randomIndex]}${current_question.answers[randomIndex]}`));
   } else {
-    return "I really don't know the answer";
+    return document.body.appendChild(new modals.CallFriend("I really don't know the answer"));
   }
 };
 
-const askTheAudience = () => {
+function askTheAudience(){
   const current_question = questions[0];
   let randomIndex = Math.floor(Math.random() * current_question.answers.length);
 
@@ -69,8 +72,8 @@ const askTheAudience = () => {
     .map(function(key) {
         return audiencePercentage[key];
     });
-  
-  return audiencePercentageValues;
+   return document.body.appendChild(new modals.AudienceModal(audiencePercentageValues));
+  // return audiencePercentageValues;
 };
 
 export { fiftyFiftyHint, callAFriend, askTheAudience };
