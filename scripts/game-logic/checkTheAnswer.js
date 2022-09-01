@@ -11,6 +11,7 @@ import renderNextQuestionAndAnswers from "../dom-manipulation/visualisation.js";
 import fetchQuestions from "../services/fetchQuestions.js";
 import { updateStage } from "./stairwayStages.js";
 import * as sounds from "../sounds.js";
+import { Bronze, GameOver, Silver } from "../dom-manipulation/modal.js";
 
 elements.quiz.answerA.addEventListener("click", checkTheAnswer);
 elements.quiz.answerB.addEventListener("click", checkTheAnswer);
@@ -58,6 +59,16 @@ function checkTheAnswer(event) {
       }
 
       console.log(getCertainSum());
+
+      if (getCertainSum() === 0) {
+        document.body.appendChild(new GameOver());
+      }
+      if (getCertainSum() === 500) {
+        document.body.appendChild(new Bronze(replaceCertainSum()));
+      } else if (getCertainSum() === 5000) {
+        document.body.appendChild(new Silver(replaceCertainSum()));
+      }
+
     }
   }, 1000);
 }

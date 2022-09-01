@@ -12,7 +12,7 @@ function renderNextQuestionAndAnswers() {
     answerButton.classList.remove("selected");
     answerButton.classList.remove("disabled");
     answerButton.parentElement.classList.remove("disabled")
-
+    
   });
 }
 

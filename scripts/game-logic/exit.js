@@ -7,4 +7,5 @@ export function onExit() {
   let sumWon = sumStairway[getQuestionIndex() - 1];
   console.log(sumWon);
   return sumWon;
+  //gameExit da dobavq
 }
