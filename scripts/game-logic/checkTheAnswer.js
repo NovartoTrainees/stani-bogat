@@ -46,11 +46,11 @@ function checkTheAnswer(event) {
         renderNextQuestionAndAnswers();
       }, 1000);
       if (getQuestionIndex() === 6) {
-        document.body.appendChild(new modals.Bronze("$500"));
+        document.body.appendChild(new modals.Bronze(500));
       } else if (getQuestionIndex() === 11) {
-        document.body.appendChild(new modals.Silver("$5,000"));
+        document.body.appendChild(new modals.Silver(5000));
       } else if (getQuestionIndex() === 16) {
-        document.body.appendChild(new modals.Gold("$100,000"));
+        document.body.appendChild(new modals.Gold(100000));
       }
     } else {
       sounds.PlayWrongAnswer().play();
