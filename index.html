@@ -8,12 +8,48 @@
     <title>Document</title>
   </head>
   <body>
+    <div class="start-game-container">
+      <div class="image">
+        <img src="images/WWTBAMUS2020Logo.png" alt="" />
+      </div>
+      <div class="home-page">
+        <div class="text">
+          <h1>Who wants to be a millionaire?</h1>
+          <p>
+            "Get Rich" has been broadcast in America for two decades and has its
+            loyal fans who follow the show regardless of the broadcast channel.
+            Sitting on the chair of fortune is a challenge that not everyone
+            would accept, but now absolutely everyone can try to fight the great
+            game in a free online version.
+          </p>
+          <p>
+            The game consists of 15 questions. The level of difficulty increases
+            with each subsequent one. The key to success is concentration and
+            calmness.
+          </p>
+          <p>You think you can answer all 15 questions - play!</p>
+          <div class="category">
+            <p>Chose category!</p>
+          </div>
+          <button class="play">PLAY</button>
+        </div>
+      </div>
+    </div>
     <div class="main-container">
       <div class="container">
         <div class="timer">
           <div class="exit-button-block">
             <button id="exit-button">Exit</button>
           </div>
+          <img
+            src="images/pngwing.com.png"
+            alt=""
+            style="
+              -webkit-transform: scaleX(-1);
+              transform: scaleX(-1);
+              height: 640px;
+            "
+          />
         </div>
         <div class="main">
           <div class="jokers">
@@ -28,70 +64,70 @@
             </div>
           </div>
           <div class="logo">
-            <img src="images/logo.png" alt="" />
+            <img src="images/WWTBAMUS2020Logo.png" alt="" />
           </div>
         </div>
         <div id="money">
           <ol reversed>
-            <li class="current sum">
+            <li class="sum" id="last-checkpoint">
               <span class="number">15</span>
-              <span class="money">100 000 лв.</span>
+              <span class="money">$100,000 </span>
             </li>
             <li class="sum">
               <span class="number">14</span>
-              <span class="money">50 000 лв.</span>
+              <span class="money">$50,000</span>
             </li>
             <li class="sum">
               <span class="number">13</span>
-              <span class="money">30 000 лв.</span>
+              <span class="money">$30,000</span>
             </li>
             <li class="sum">
               <span class="number">12</span>
-              <span class="money">20 000 лв.</span>
+              <span class="money">$20,000</span>
             </li>
             <li class="sum">
               <span class="number">11</span>
-              <span class="money">10 000 лв.</span>
+              <span class="money">$10,000</span>
             </li>
-            <li class="sum">
+            <li class="sum" id="second-checkpoint">
               <span class="number">10</span>
-              <span class="money">5 000 лв.</span>
+              <span class="money">$5,000</span>
             </li>
             <li class="sum">
               <span class="number">9</span>
-              <span class="money">3 000 лв.</span>
+              <span class="money">$3,000</span>
             </li>
             <li class="sum">
               <span class="number">8</span>
-              <span class="money">2 000 лв.</span>
+              <span class="money">$2,000</span>
             </li>
             <li class="sum">
               <span class="number">7</span>
-              <span class="money">1 500 лв.</span>
+              <span class="money">$1,500</span>
             </li>
             <li class="sum">
               <span class="number">6</span>
-              <span class="money">1 000 лв.</span>
+              <span class="money">$1,000</span>
             </li>
-            <li class="sum">
+            <li class="sum" id="first-checkpoint">
               <span class="number">5</span>
-              <span class="money">500 лв.</span>
+              <span class="money">$500 </span>
             </li>
             <li class="sum">
               <span class="number">4</span>
-              <span class="money">400 лв.</span>
+              <span class="money">$400 </span>
             </li>
             <li class="sum">
               <span class="number">3</span>
-              <span class="money">300 лв.</span>
+              <span class="money">$300 </span>
             </li>
             <li class="sum">
               <span class="number">2</span>
-              <span class="money">200 лв.</span>
+              <span class="money">$200 </span>
             </li>
-            <li class="sum">
+            <li class="current-sum sum">
               <span class="number">1</span>
-              <span class="money">100 лв.</span>
+              <span class="money">$100 </span>
             </li>
           </ol>
         </div>
@@ -103,14 +139,24 @@
         <div class="answers">
           <div class="line"></div>
           <div class="line"></div>
+
           <div id="dummyAnswer" style="display: none"></div>
-          <div class="answer"><button class="answer-holder"></button></div>
-          <div class="answer"><button class="answer-holder"></button></div>
-          <div class="answer"><button class="answer-holder"></button></div>
-          <div class="answer"><button class="answer-holder"></button></div>
+          <div class="answer">
+            <span id="a">A:</span><button class="answer-holder"></button>
+          </div>
+          <div class="answer">
+            <span id="b">B:</span><button class="answer-holder"></button>
+          </div>
+          <div class="answer">
+            <span id="c">C:</span><button class="answer-holder"></button>
+          </div>
+          <div class="answer">
+            <span id="d">D:</span><button class="answer-holder"></button>
+          </div>
         </div>
       </div>
     </div>
+
     <script type="module" src="./scripts/index.js"></script>
   </body>
 </html>

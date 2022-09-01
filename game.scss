@@ -1,23 +1,36 @@
+$game-yellow: #f1ab27;
+
 body {
   background-color: #170557;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
 }
 .main-container {
   background-image: url("images/bg_home_screen.jpg");
-  width: 1300px;
+  width: 1518px;
   margin: auto;
-  padding: 80px;
-  background-position-x: -235px;
+
+  background-position-y: -70px;
+  background-position-x: -215px;
   background-repeat: no-repeat;
+  display: none;
 
   .container {
-    max-width: 1280px;
+    max-width: 1518px;
     width: 100%;
     margin: auto;
+    height: 480px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    .logo {
+      img {
+        width: 400px;
+      }
+    }
     .jokers {
       display: flex;
       justify-content: space-around;
+      padding-bottom: 10px;
       .joker {
         #audience {
           background-image: url("images/friend.png");
@@ -63,17 +76,38 @@ body {
   }
   .timer {
     width: 230px;
+
+    .exit-button-block {
+      button {
+        background: url("images/buttonC.png");
+        width: 195px;
+        color: #170557;
+        height: 42px;
+        background-repeat: no-repeat;
+        border: transparent;
+        border-radius: 30px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 25px;
+        cursor: pointer;
+        margin-bottom: 27px;
+      }
+      button:hover {
+        color: red;
+        cursor: pointer;
+      }
+    }
   }
   #money {
     position: relative;
     min-width: 240px;
-    margin-bottom: 50px;
-    font-weight: 900;
+
+    font-weight: 900px;
     ol {
       color: #e1a02e;
       display: flex;
       flex-direction: column;
-      height: 100%;
+
       width: 100%;
       margin: 0;
       box-sizing: border-box;
@@ -90,13 +124,37 @@ body {
       align-items: center;
       color: #ffb600;
     }
+    #first-checkpoint {
+      span {
+        color: white;
+      }
+    }
+    #second-checkpoint {
+      span {
+        color: white;
+      }
+    }
+    #last-checkpoint {
+      span {
+        color: white;
+      }
+    }
+    .current-sum {
+      background: url("images/sum_bg_selected.png");
+      width: 195px;
+      height: 35px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      color: white;
+    }
     .number {
       width: 16px;
       text-align: right;
-      margin-left: 30px;
+      margin-left: 27px;
     }
     .money {
-      padding-left: 25px;
+      padding-left: 30px;
     }
   }
 }
@@ -123,16 +181,34 @@ body {
     vertical-align: middle;
     overflow-wrap: anywhere;
   }
+
   .answers {
     width: 850px;
     display: grid;
     grid-template-columns: auto auto;
-    grid-gap: 20px 0;
+    grid-gap: 9px 0;
     margin: auto;
     position: relative;
-    padding-top: 20px;
+    padding-top: 10px;
     .answer {
       margin: auto;
+      position: relative;
+      border-radius: 30px;
+      &:hover {
+        span {
+          color: #170557;
+        }
+      }
+      span {
+        z-index: 1;
+        position: absolute;
+        left: 53px;
+        top: 18px;
+        color: #e1a02e;
+        font-weight: 600;
+        cursor: pointer;
+        pointer-events: none;
+      }
 
       button {
         background: url("images/bg_answer.png");
@@ -146,6 +222,7 @@ body {
         background-size: 100%;
         background-repeat: no-repeat;
         border-radius: 30px;
+        z-index: 0;
       }
       button:hover {
         background: url("images/bg_answer_selected.png");
@@ -160,7 +237,8 @@ body {
         background-repeat: no-repeat;
         border-radius: 30px;
       }
-      .selected{
+
+      .selected {
         background: url("images/bg_answer_selected.png");
         width: 382px;
         height: 52px;
@@ -174,7 +252,7 @@ body {
         border-radius: 30px;
       }
 
-      .correct{
+      .correct {
 
         background: url("images/answer_correct.png");
         width: 382px;
@@ -190,17 +268,243 @@ body {
       }
     }
   }
+  .disabled {
+    pointer-events: none;
+  }
   .line {
-    background: url("images/lineB.png");
+    background: url(images/lineB.png);
     width: 1180px;
     height: 2px;
     background-repeat: no-repeat;
     background-size: 89%;
     position: absolute;
     left: -100px;
-    top: 44.8px;
+    top: 34.8px;
   }
   .line:nth-child(2) {
-    top: 116px;
+    top: 95px;
   }
+}
+.start-game-container {
+  background: url("images/bg_home_screen.jpg");
+  background-position-x: -450px;
+  width: 1000px;
+  height: 1200px;
+  background-repeat: no-repeat;
+  display: block;
+  margin: auto;
+  text-align: center;
+
+  .image {
+    display: flex;
+    justify-content: center;
+    padding-top: 130px;
+  }
+  .home-page {
+  }
+  img {
+    width: 400px;
+    left: 305px;
+    top: 150px;
+  }
+  button {
+    background: url("images/button_home.png");
+
+    font-weight: 600;
+    width: 260px;
+    height: 70px;
+    border: transparent;
+    border-radius: 30px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    font-size: 30px;
+    padding-bottom: 10px;
+    color: #170557;
+  }
+  button:hover {
+    background: url("images/bg_home_hover.png");
+
+    font-weight: 600;
+    width: 260px;
+    height: 70px;
+    border: transparent;
+    border-radius: 30px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    color: #e1a02e;
+    font-size: 30px;
+    padding-bottom: 10px;
+  }
+  h1 {
+    color: #e1a02e;
+    font-weight: bold;
+  }
+  p {
+    color: white;
+
+    padding: 20px;
+    font-size: large;
+  }
+  .category {
+    padding-bottom: 30px;
+  }
+}
+.modal-back {
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  justify-content: center;
+  align-items: center;
+  vertical-align: baseline;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+
+  > * {
+    margin-top: 130px;
+  }
+}
+
+#modal-friend {
+  width: 355px;
+  height: 315px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/images/call_friend.png");
+}
+
+#modal-audience {
+  width: 355px;
+  height: 369px;
+  background-image: url("/images/audience.png");
+}
+
+#modal-game-over {
+  width: 355px;
+  height: 281px;
+
+  background-image: url("/images/popUpStartAgain.png");
+
+  > * {
+    transform: translateY(70px);
+    margin-left: 15px;
+  }
+}
+
+#modal-stage-one {
+  width: 346px;
+  height: 271px;
+
+  background-image: url("/images/popUpSafety.png");
+  background-repeat: no-repeat;
+
+  > * {
+    transform: translateY(50px);
+    margin-left: 15px;
+  }
+
+  p {
+    max-width: 191px;
+  }
+}
+
+.win-modal {
+  width: 355px;
+  height: 618px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-image: url("/images/badge-modal-bg.png");
+  background-repeat: no-repeat;
+
+  > img {
+    margin-top: 37px;
+    margin-bottom: 60px;
+  }
+
+  > p {
+    margin-left: 15px;
+    margin-right: 15px;
+    text-align: center;
+  }
+}
+
+.continue-button-wrapper {
+  margin: auto;
+  transform: translateY(-22.5px);
+  margin-top: inherit;
+  position: relative;
+  border-radius: 50px;
+  width: 195px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+
+  background-repeat: no-repeat;
+  background-image: url("/images/buttonC.png");
+
+  .continue-button {
+    font-weight: 500;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    width: inherit;
+  }
+}
+
+.continue-button-wrapper:hover {
+  background-image: url("/images/buttonCH.png");
+}
+
+.continue-button:hover {
+  color: $game-yellow;
+  transition: 0.5s;
+}
+
+.one,
+.two,
+.three,
+.four {
+  position: absolute;
+  width: 30px;
+  height: 120px;
+  background-image: url("/images/bg.jpg");
+  transition-property: height;
+  transition-duration: 2s;
+}
+
+#onePercentage,
+#twoPercentage,
+#threePercentage,
+#fourPercentage {
+  position: absolute;
+  top: 110px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: white;
+  font-size: 1rem;
+  transition-property: top;
+  transition-duration: 2s;
+  margin-top: 90px;
+  text-align: center;
+}
+
+.playAnimation {
+  height: 250px;
+  top: 110px;
+}
+
+.bar {
+  width: 30px;
+  height: 100px;
+  background-image: url("./images/bar.jpg");
 }

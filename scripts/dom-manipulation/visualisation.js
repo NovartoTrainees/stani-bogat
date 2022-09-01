@@ -8,10 +8,10 @@ function renderNextQuestionAndAnswers() {
 
   elements.answerArray.forEach((answerButton, index) => {
     answerButton.innerHTML = questions[0].answers[index];
-
-    answerButton.removeAttribute("disabled");
     answerButton.classList.remove("correct");
     answerButton.classList.remove("selected");
+    answerButton.classList.remove("disabled");
+    answerButton.parentElement.classList.remove("disabled")
 
   });
 }

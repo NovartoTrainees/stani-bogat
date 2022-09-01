@@ -8,7 +8,7 @@ const BASE_URL = "https://opentdb.com/api.php";
  * @param {string} difficulty - Default: easy. Possible values: easy, medium, hard.
  */
 const fetchQuestions = (difficulty = "easy") => {
-  const url = `${BASE_URL}?amount=5&difficulty=${difficulty}&type=multiple`;
+  const url = `${BASE_URL}?amount=5&difficulty=${difficulty}&type=multiple&category=21`;
 
   return fetch(url)
     .then((response) => response.json())
