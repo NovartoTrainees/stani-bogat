@@ -4,7 +4,7 @@ import {
   incrementQuestionIndex,
   getQuestionIndex,
   replaceCertainSum,
-  getCertainSum,
+  getCertainSum
 } from "../variables.js";
 import * as elements from "../dom-manipulation/elements.js";
 import renderNextQuestionAndAnswers from "../dom-manipulation/visualisation.js";
@@ -26,8 +26,7 @@ function checkTheAnswer(event) {
   });
 
   const current_question = questions[0];
-  const isCorrectAnswer =
-    current_question.correct_answer === event.target.textContent;
+  const isCorrectAnswer = current_question.correct_answer === event.target.textContent;
   event.target.classList.add("selected");
 
   setTimeout(() => {
@@ -66,28 +65,12 @@ function checkTheAnswer(event) {
         replaceCertainSum(5000);
       }
 
-      // if (getCertainSum() < 500) {
-      //   document.body.appendChild(new modals.GameOver());
-      // } else if (getCertainSum() === 500) {
-      //   document.body.appendChild(new modals.Bronze("$500"));
-      // } else if (getCertainSum() === 5000) {
-      //   document.body.appendChild(new modals.Silver("$5,000"));
-      // }
-
-      console.log(getCertainSum());
-
-      /**
-       *
-       * KOCETO:
-       *
-       */
-      if (getCertainSum() === 0) {
+      if (getCertainSum() < 500) {
         document.body.appendChild(new modals.GameOver());
-      }
-      if (getCertainSum() === 500) {
-        document.body.appendChild(new modals.Bronze(replaceCertainSum()));
+      } else if (getCertainSum() === 500) {
+        document.body.appendChild(new modals.Bronze(getCertainSum()));
       } else if (getCertainSum() === 5000) {
-        document.body.appendChild(new modals.Silver(replaceCertainSum()));
+        document.body.appendChild(new modals.Silver(getCertainSum()));
       }
     }
   }, 1000);
