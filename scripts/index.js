@@ -7,22 +7,15 @@ import { onExit } from "./game-logic/exit.js";
 import { temp } from "./game-logic/stairwayStages.js";
 import * as audio from "./sounds.js";
 import { startGame } from "./game-logic/play.js";
-import {
-  AudienceModal,
-  Bronze,
-  CallFriend,
-  Elite,
-  FirstStage,
-  GameOver,
-  Gold,
-  Silver,
-} from "./dom-manipulation/modal.js";
+import * as modals from "./dom-manipulation/modal.js";
 
 await fetchQuestions();
 
 renderNextQuestionAndAnswers();
 
-// document.body.appendChild(new Silver("$10,000"));
-// document.body.appendChild(new Bronze("$20,000"));
-// document.body.appendChild(new Elite("$30,000"));
-// document.body.appendChild(new Gold("$40,000"));
+// document.body.appendChild(new modals.Silver("$10,000"));
+// document.body.appendChild(new modals.Bronze("$20,000"));
+// document.body.appendChild(new modals.Elite("$30,000"));
+// document.body.appendChild(new modals.Gold("$100,000"));
+
+// document.body.appendChild(new modals.GameOver());

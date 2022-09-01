@@ -107,7 +107,7 @@ export class WinBadge extends Modal {
 export class Bronze extends WinBadge {
   constructor(winAmmount) {
     super(
-      "../../images/silver-badge.png",
+      "../../images/bronze-badge.png",
       "You won the title 'Bronze Player!' You reached level",
       winAmmount,
       "Congrats! The road ahead is hard, but achivable with solid knowledge"
@@ -119,7 +119,7 @@ export class Silver extends WinBadge {
   constructor(winAmmount) {
     super(
       "../../images/silver-badge.png",
-      "You won the title 'Elite Player!' You reached level",
+      "You won the title 'Silver Player!' You reached level",
       winAmmount,
       "Congrats! Your erudition compels admiration"
     );
@@ -149,33 +149,33 @@ export class Gold extends WinBadge {
 }
 
 window.customElements.define("audience-modal", AudienceModal, {
-  extends: "div",
+  extends: "div"
 });
 
 window.customElements.define("friend-modal", CallFriend, {
-  extends: "div",
+  extends: "div"
 });
 
 window.customElements.define("game-over-modal", GameOver, {
-  extends: "div",
+  extends: "div"
 });
 
 window.customElements.define("first-stage-modal", FirstStage, {
-  extends: "div",
+  extends: "div"
 });
 
 window.customElements.define("bronze-player-modal", Bronze, {
-  extends: "div",
+  extends: "div"
 });
 
 window.customElements.define("silver-player-modal", Silver, {
-  extends: "div",
+  extends: "div"
 });
 
 window.customElements.define("elite-player-modal", Elite, {
-  extends: "div",
+  extends: "div"
 });
 
 window.customElements.define("gold-player-modal", Gold, {
-  extends: "div",
+  extends: "div"
 });
