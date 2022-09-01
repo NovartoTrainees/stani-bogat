@@ -50,17 +50,43 @@ export class GameOver extends Modal {
   heading = document.createElement("h3");
   paragraph = document.createElement("p");
 
-  constructor() {
+  constructor(money) {
     super();
 
     this.window.id = "modal-game-over";
 
     this.heading.textContent = "SORRY,";
 
-    this.paragraph.textContent = "you lost, try again";
+    this.paragraph.innerHTML = `you lost but you are <br/> leaving with $${money}`;
 
     this.window.appendChild(this.heading);
     this.window.appendChild(this.paragraph);
+
+    this.continueButton.addEventListener("click", () => {
+      location.reload();
+    });
+  }
+}
+
+export class GameExit extends Modal {
+  heading = document.createElement("h3");
+  paragraph = document.createElement("p");
+
+  constructor(money) {
+    super();
+
+    this.window.id = "modal-game-over";
+
+    this.heading.textContent = "Better luck next time,";
+
+    this.paragraph.innerHTML = `you are leaving with:<br/> $${money}`;
+
+    this.window.appendChild(this.heading);
+    this.window.appendChild(this.paragraph);
+
+    this.continueButton.addEventListener("click", () => {
+      location.reload();
+    });
   }
 }
 
@@ -101,13 +127,17 @@ export class WinBadge extends Modal {
     this.window.appendChild(this.firstParagrpah);
     this.window.appendChild(this.winnings);
     this.window.appendChild(this.secondParagraph);
+
+    this.continueButton.addEventListener("click", () => {
+      location.reload();
+    });
   }
 }
 
 export class Bronze extends WinBadge {
   constructor(winAmmount) {
     super(
-      "../../images/silver-badge.png",
+      "../../images/bronze-badge.png",
       "You won the title 'Bronze Player!' You reached level",
       winAmmount,
       "Congrats! The road ahead is hard, but achivable with solid knowledge"
@@ -119,7 +149,7 @@ export class Silver extends WinBadge {
   constructor(winAmmount) {
     super(
       "../../images/silver-badge.png",
-      "You won the title 'Elite Player!' You reached level",
+      "You won the title 'Silver Player!' You reached level",
       winAmmount,
       "Congrats! Your erudition compels admiration"
     );
@@ -129,8 +159,8 @@ export class Silver extends WinBadge {
 export class Elite extends WinBadge {
   constructor(winAmmount) {
     super(
-      "../../images/silver-badge.png",
-      "You won the title 'Silver Player!' You reached level",
+      "../../images/elit-badge.png",
+      "You won the title 'Elite Player!' You reached level",
       winAmmount,
       "Congrats! Your erudition compels admiration"
     );
@@ -157,6 +187,10 @@ window.customElements.define("friend-modal", CallFriend, {
 });
 
 window.customElements.define("game-over-modal", GameOver, {
+  extends: "div",
+});
+
+window.customElements.define("game-exit-modal", GameExit, {
   extends: "div",
 });
 

@@ -11,6 +11,7 @@ import renderNextQuestionAndAnswers from "../dom-manipulation/visualisation.js";
 import fetchQuestions from "../services/fetchQuestions.js";
 import { updateStage } from "./stairwayStages.js";
 import * as sounds from "../sounds.js";
+import * as modals from "../dom-manipulation/modal.js";
 
 elements.quiz.answerA.addEventListener("click", checkTheAnswer);
 elements.quiz.answerB.addEventListener("click", checkTheAnswer);
@@ -44,6 +45,13 @@ function checkTheAnswer(event) {
         // sounds
         renderNextQuestionAndAnswers();
       }, 1000);
+      if (getQuestionIndex() === 6) {
+        document.body.appendChild(new modals.Bronze(500));
+      } else if (getQuestionIndex() === 11) {
+        document.body.appendChild(new modals.Silver(5000));
+      } else if (getQuestionIndex() === 16) {
+        document.body.appendChild(new modals.Gold(100000));
+      }
     } else {
       sounds.PlayWrongAnswer().play();
       elements.answerArray.forEach((button) => {
@@ -57,7 +65,13 @@ function checkTheAnswer(event) {
         replaceCertainSum(5000);
       }
 
-      console.log(getCertainSum());
+      if (getCertainSum() < 500) {
+        document.body.appendChild(new modals.GameOver());
+      } else if (getCertainSum() === 500) {
+        document.body.appendChild(new modals.Bronze(getCertainSum()));
+      } else if (getCertainSum() === 5000) {
+        document.body.appendChild(new modals.Silver(getCertainSum()));
+      }
     }
   }, 1000);
 }
