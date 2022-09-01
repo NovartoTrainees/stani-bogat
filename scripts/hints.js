@@ -24,7 +24,7 @@ function fiftyFiftyHint() {
   elements.answerArray.forEach((button) => {
     if (!current_question.answers.includes(button.textContent)) {
       button.textContent = '';
-      button.classList.add('disabled');
+
     }
   });
 
@@ -55,6 +55,7 @@ function callAFriend() {
   const correctAnswerLetter = answerToLetterReference[Array.from(elements.answerArray).map(btn => btn.textContent).indexOf(current_question.correct_answer)];
   const incorrectAnswerLetter = answerToLetterReference[Array.from(elements.answerArray).map(btn => btn.textContent).indexOf(current_question.answers[randomIndex])];
 
+  elements.hints.callFriend.setAttribute("id", "disabled-hint-phone");
   if (randomGuess < 0.5) {
     return document.body.appendChild(new modals.CallFriend(`${quotes[randomIndex]} ${correctAnswerLetter}`));
   } else if (randomGuess >= 0.5 && randomGuess <= 0.9) {
@@ -67,7 +68,7 @@ function callAFriend() {
 function askTheAudience() {
   const current_question = questions[0];
   let randomIndex = Math.floor(Math.random() * current_question.answers.length);
-
+  elements.hints.crowd.setAttribute("id", "disabled-hint-audience");
   let audiencePercentage = {};
   audiencePercentage = current_question.answers.reduce((accumulator, value) => {
     return { ...accumulator, [value]: 0 };

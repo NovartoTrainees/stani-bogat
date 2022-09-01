@@ -22,7 +22,7 @@ await fetchQuestions();
 
 renderNextQuestionAndAnswers();
 
-// document.body.appendChild(new Silver("$10,000"));
-// document.body.appendChild(new Bronze("$20,000"));
-// document.body.appendChild(new Elite("$30,000"));
-// document.body.appendChild(new Gold("$40,000"));
+document.body.appendChild(new Silver("$10,000"));
+document.body.appendChild(new Bronze("$20,000"));
+document.body.appendChild(new Elite("$30,000"));
+document.body.appendChild(new Gold("$40,000"));
