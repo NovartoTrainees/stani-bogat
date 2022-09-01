@@ -64,6 +64,25 @@ export class GameOver extends Modal {
   }
 }
 
+export class GameExit extends Modal {
+  heading = document.createElement("h3");
+  paragraph = document.createElement("p");
+
+  constructor() {
+    super();
+
+    this.window.id = "modal-game-over";
+
+    this.heading.textContent = "BETTER LUCK NEXT TIME,";
+
+    this.paragraph.textContent =
+      "we hope to see you again, you are leaving empty handed";
+    GameOver;
+    this.window.appendChild(this.heading);
+    this.window.appendChild(this.paragraph);
+  }
+}
+
 export class FirstStage extends Modal {
   heading = document.createElement("h3");
   paragraph = document.createElement("p");
@@ -93,7 +112,7 @@ export class WinBadge extends Modal {
     super();
     this.badge.src = badgeSrcURL;
     this.firstParagrpah.textContent = p1Content;
-    this.winnings.textContent = winAmmount;
+    this.winnings.textContent = `$${winAmmount}`;
     this.secondParagraph.textContent = p2Content;
     this.window.classList.add("win-modal");
 
@@ -107,8 +126,8 @@ export class WinBadge extends Modal {
 export class Bronze extends WinBadge {
   constructor(winAmmount) {
     super(
-      "../../images/silver-badge.png",
-      "You won the title 'Bronze Player!' You reached level",
+      "../../images/bronze-badge.png",
+      "You won the title 'Bronze Player!' You won",
       winAmmount,
       "Congrats! The road ahead is hard, but achivable with solid knowledge"
     );
@@ -119,7 +138,7 @@ export class Silver extends WinBadge {
   constructor(winAmmount) {
     super(
       "../../images/silver-badge.png",
-      "You won the title 'Elite Player!' You reached level",
+      "You won the title 'Silver Player!' You won",
       winAmmount,
       "Congrats! Your erudition compels admiration"
     );
@@ -129,8 +148,8 @@ export class Silver extends WinBadge {
 export class Elite extends WinBadge {
   constructor(winAmmount) {
     super(
-      "../../images/silver-badge.png",
-      "You won the title 'Silver Player!' You reached level",
+      "../../images/elit-badge.png",
+      "You won the title 'Elit Player!' You won",
       winAmmount,
       "Congrats! Your erudition compels admiration"
     );
