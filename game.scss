@@ -615,3 +615,39 @@ body {
   transition-property: height;
   transition-duration: 2s;
 }
+
+#a-bar {
+  left: 84px;
+}
+#b-bar {
+  left: 134px;
+}
+#c-bar {
+  left: 182px;
+}
+#d-bar {
+  left: 230px;
+}
+
+#a-Perc {
+  left: 34px;
+}
+#b-Perc {
+  left: 84px;
+}
+#c-Perc {
+  left: 182px;
+}
+#d-Perc {
+  left: 230px;
+}
+
+.bar-percentage {
+  position: relative;
+  top: 140px;
+}
+
+.bar-lable {
+  position: relative;
+  top: 229px;
+}

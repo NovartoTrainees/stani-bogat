@@ -29,6 +29,16 @@ export class AudienceModal extends Modal {
   thirdBarElement = document.createElement("div");
   fourtBarElement = document.createElement("div");
 
+  a = document.createElement("span");
+  b = document.createElement("span");
+  c = document.createElement("span");
+  d = document.createElement("span");
+
+  aPerc = document.createElement("span");
+  bPerc = document.createElement("span");
+  cPerc = document.createElement("span");
+  dPerc = document.createElement("span");
+
   constructor(percentages) {
     super();
     this.window.id = "modal-audience";
@@ -38,10 +48,50 @@ export class AudienceModal extends Modal {
     this.thirdBarElement.classList.add("third-bar");
     this.fourtBarElement.classList.add("fourt-bar");
 
+    this.a.id = "a-bar";
+    this.b.id = "b-bar";
+    this.c.id = "c-bar";
+    this.d.id = "d-bar";
+
+    this.a.classList.add("bar-lable");
+    this.b.classList.add("bar-lable");
+    this.c.classList.add("bar-lable");
+    this.d.classList.add("bar-lable");
+
+    this.aPerc.id = "a-Perc";
+    this.bPerc.id = "b-Perc";
+    this.cPerc.id = "c-Perc";
+    this.dPerc.id = "d-Perc";
+
+    this.aPerc.classList.add("bar-percentage");
+    this.bPerc.classList.add("bar-percentage");
+    this.cPerc.classList.add("bar-percentage");
+    this.dPerc.classList.add("bar-percentage");
+
     this.container.appendChild(this.fourtBarElement);
     this.container.appendChild(this.thirdBarElement);
     this.container.appendChild(this.secondBarElement);
     this.container.appendChild(this.firstBarElement);
+
+    this.container.appendChild(this.a);
+    this.container.appendChild(this.b);
+    this.container.appendChild(this.c);
+    this.container.appendChild(this.d);
+
+    this.container.appendChild(this.aPerc);
+    this.container.appendChild(this.bPerc);
+    this.container.appendChild(this.cPerc);
+    this.container.appendChild(this.dPerc);
+
+    this.a.textContent = "A";
+    this.b.textContent = "B";
+    this.c.textContent = "C";
+    this.d.textContent = "D";
+
+    this.aPerc.textContent = `${percentages[0]}%`;
+    this.bPerc.textContent = `${percentages[1]}%`;
+    this.cPerc.textContent = `${percentages[2]}%`;
+    this.dPerc.textContent = `${percentages[3]}%`;
 
     this.window.appendChild(this.container);
 
