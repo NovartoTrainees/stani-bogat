@@ -22,9 +22,46 @@ class Modal extends HTMLDivElement {
 }
 
 export class AudienceModal extends Modal {
+  container = document.createElement("div");
+  firstBarElement = document.createElement("div");
+  secondBarElement = document.createElement("div");
+  thirdBarElement = document.createElement("div");
+  fourtBarElement = document.createElement("div");
+
   constructor(percentages) {
     super();
     this.window.id = "modal-audience";
+    this.container.id = "bar-container";
+
+    this.firstBarElement.classList.add("first-bar");
+    this.secondBarElement.classList.add("second-bar");
+    this.thirdBarElement.classList.add("third-bar");
+    this.fourtBarElement.classList.add("fourt-bar");
+
+    this.container.appendChild(this.fourtBarElement);
+    this.container.appendChild(this.thirdBarElement);
+    this.container.appendChild(this.secondBarElement);
+    this.container.appendChild(this.firstBarElement);
+    this.window.appendChild(this.container);
+
+    this.firstBarElement.style.maxHeight = `${percentages[0]}` + "px;";
+    this.firstBarElement.classList.add("activate-animation-first-bar");
+    console.log(percentages[0]);
+
+    this.secondBarElement.style.maxHeight = `${percentages[1]}` + "px;";
+    this.secondBarElement.classList.add("activate-animation-second-bar");
+    console.log(percentages[1]);
+
+    this.thirdBarElement.style.maxHeight = `${percentages[2]}` + "px;";
+
+    this.thirdBarElement.classList.add("activate-animation-third-bar");
+    console.log(percentages[2]);
+
+    this.fourtBarElement.style.maxHeight = `${percentages[3]}` + "px;";
+    this.fourtBarElement.classList.add("activate-animation-fourt-bar");
+    console.log(percentages[3]);
+
+    console.log("test", this.container.childNodes);
   }
 }
 
