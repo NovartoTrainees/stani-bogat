@@ -60,7 +60,7 @@ function callAFriend() {
   } else if (randomGuess >= 0.5 && randomGuess <= 0.9) {
     return document.body.appendChild(new modals.CallFriend(`${quotes[randomIndex]} ${incorrectAnswerLetter}`));
   } else {
-    return "I really don't know the answer";
+    return document.body.appendChild(new modals.CallFriend("I really don't know the answer!"));;
   }
 };
 
