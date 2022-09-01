@@ -25,7 +25,7 @@ function fiftyFiftyHint() {
     }
   });
 
-  elements.hints.fiftyFifty.disabled = true;
+  elements.hints.fiftyFifty.setAttribute("id", "disabled-hint-fifty");
 };
 
 const callAFriend = () => {
@@ -66,10 +66,10 @@ const askTheAudience = () => {
   }
 
   const audiencePercentageValues = Object.keys(audiencePercentage)
-    .map(function(key) {
-        return audiencePercentage[key];
+    .map(function (key) {
+      return audiencePercentage[key];
     });
-  
+
   return audiencePercentageValues;
 };
 
