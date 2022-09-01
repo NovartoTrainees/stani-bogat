@@ -37,10 +37,10 @@ function callAFriend() {
   const randomIndex = Math.floor(Math.random() * current_question.answers.length);
 
   const quotes = [
-    "Hi, my old friend! This is a tough question but I think that the correct answer is",
-    "I'm pretty sure that you have to mark",
+    "I think the correct answer is",
+    "I'm pretty sure you have to mark",
     "You can go ahead and mark",
-    "Hi, I believe the correct one is",
+    "I believe the correct one is",
   ];
 
   const answerToLetterReference = {
@@ -60,7 +60,7 @@ function callAFriend() {
   } else if (randomGuess >= 0.5 && randomGuess <= 0.9) {
     return document.body.appendChild(new modals.CallFriend(`${quotes[randomIndex]} ${incorrectAnswerLetter}`));
   } else {
-    return document.body.appendChild(new modals.CallFriend("I really don't know the answer!"));;
+    return document.body.appendChild(new modals.CallFriend("I don't really know the answer!"));;
   }
 };
 
