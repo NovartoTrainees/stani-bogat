@@ -72,14 +72,14 @@ export class GameExit extends Modal {
   heading = document.createElement("h3");
   paragraph = document.createElement("p");
 
-  constructor() {
+  constructor(money) {
     super();
 
     this.window.id = "modal-game-over";
 
     this.heading.textContent = "Better luck next time,";
 
-    this.paragraph.innerHTML = "you are leaving <br/> empty handed";
+    this.paragraph.innerHTML = `you are leaving with:<br/> $${money}`;
 
     this.window.appendChild(this.heading);
     this.window.appendChild(this.paragraph);
