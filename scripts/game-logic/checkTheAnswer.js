@@ -22,7 +22,6 @@ function checkTheAnswer(event) {
   elements.answerArray.forEach((button) => {
     button.classList.add("disabled");
     button.parentElement.classList.add("disabled");
-    console.log(button.parentElement);
   });
 
   const current_question = questions[0];
@@ -42,7 +41,6 @@ function checkTheAnswer(event) {
       incrementQuestionIndex();
 
       setTimeout(() => {
-        // sounds
         renderNextQuestionAndAnswers();
       }, 1000);
       if (getQuestionIndex() === 6) {
@@ -54,24 +52,20 @@ function checkTheAnswer(event) {
       }
     } else {
       sounds.PlayWrongAnswer().play();
+
       elements.answerArray.forEach((button) => {
         if (current_question.correct_answer === button.textContent) {
           button.classList.add("correct");
         }
       });
+
       if (getQuestionIndex() > 5 && getQuestionIndex() <= 10) {
         replaceCertainSum(500);
       } else if (getQuestionIndex() > 10 && getQuestionIndex() < 15) {
         replaceCertainSum(5000);
       }
 
-      if (getCertainSum() < 500) {
-        document.body.appendChild(new modals.GameOver());
-      } else if (getCertainSum() === 500) {
-        document.body.appendChild(new modals.Bronze(getCertainSum()));
-      } else if (getCertainSum() === 5000) {
-        document.body.appendChild(new modals.Silver(getCertainSum()));
-      }
+      document.body.appendChild(new modals.GameOver(getCertainSum()));
     }
   }, 1000);
 }
