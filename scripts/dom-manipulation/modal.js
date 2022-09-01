@@ -127,10 +127,6 @@ export class WinBadge extends Modal {
     this.window.appendChild(this.firstParagrpah);
     this.window.appendChild(this.winnings);
     this.window.appendChild(this.secondParagraph);
-
-    this.continueButton.addEventListener("click", () => {
-      location.reload();
-    });
   }
 }
 
@@ -175,6 +171,10 @@ export class Gold extends WinBadge {
       winAmmount,
       "Congrats! Kudos for turning your knowledge into gold"
     );
+
+    this.continueButton.addEventListener("click", () => {
+      location.reload();
+    });
   }
 }
 
