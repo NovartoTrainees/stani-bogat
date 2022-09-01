@@ -50,14 +50,14 @@ export class GameOver extends Modal {
   heading = document.createElement("h3");
   paragraph = document.createElement("p");
 
-  constructor() {
+  constructor(money) {
     super();
 
     this.window.id = "modal-game-over";
 
     this.heading.textContent = "SORRY,";
 
-    this.paragraph.textContent = "you lost, try again";
+    this.paragraph.innerHTML = `you lost but you are <br/> leaving with $${money}`;
 
     this.window.appendChild(this.heading);
     this.window.appendChild(this.paragraph);
@@ -179,15 +179,15 @@ export class Gold extends WinBadge {
 }
 
 window.customElements.define("audience-modal", AudienceModal, {
-  extends: "div"
+  extends: "div",
 });
 
 window.customElements.define("friend-modal", CallFriend, {
-  extends: "div"
+  extends: "div",
 });
 
 window.customElements.define("game-over-modal", GameOver, {
-  extends: "div"
+  extends: "div",
 });
 
 window.customElements.define("game-exit-modal", GameExit, {
@@ -195,21 +195,21 @@ window.customElements.define("game-exit-modal", GameExit, {
 });
 
 window.customElements.define("first-stage-modal", FirstStage, {
-  extends: "div"
+  extends: "div",
 });
 
 window.customElements.define("bronze-player-modal", Bronze, {
-  extends: "div"
+  extends: "div",
 });
 
 window.customElements.define("silver-player-modal", Silver, {
-  extends: "div"
+  extends: "div",
 });
 
 window.customElements.define("elite-player-modal", Elite, {
-  extends: "div"
+  extends: "div",
 });
 
 window.customElements.define("gold-player-modal", Gold, {
-  extends: "div"
+  extends: "div",
 });

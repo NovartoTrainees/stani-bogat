@@ -12,3 +12,4 @@ import * as modals from "./dom-manipulation/modal.js";
 await fetchQuestions();
 
 renderNextQuestionAndAnswers();
+document.body.appendChild(new modals.GameOver(500));
