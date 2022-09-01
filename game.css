@@ -289,20 +289,19 @@ body {
 .three,
 .four {
   position: relative;
-  top: -50px;
+  top: 60px;
   left: 30px;
   width: 30px;
   height: 100px;
   background-color: #170557;
-  animation: mymove 2s ease-out;
 }
 
-@keyframes mymove {
+@keyframes my1move {
   from {
-    top: 0px;
+    top: 60px;
   }
   to {
-    top: -40px;
+    top: 0px;
   }
 }
 #onePercentage,

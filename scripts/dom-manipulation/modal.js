@@ -36,10 +36,12 @@ export class AudienceModal extends Modal {
 
     function changeWidth(percentages) {
       mask1.style.top= -`${percentages}` + 'px';// mask`s end point
+      mask1.style.animation = `my1move ${2}s ease-out`;
       console.log("test", container.childNodes);
     }
-
-      changeWidth(20);
+      setTimeout(()=>{
+        changeWidth(0);
+      },1000)
   }
 }
 
