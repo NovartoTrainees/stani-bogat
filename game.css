@@ -432,7 +432,7 @@ body {
   position: absolute;
   content: "";
   bottom: 50%;
-  left: 30%;
+  left: 84px;
   background-color: aqua;
   width: 50px;
   animation-fill-mode: forwards;
@@ -472,7 +472,7 @@ body {
   position: absolute;
   content: "";
   bottom: 60%;
-  left: 43%;
+  left: 200px;
   background-image: url("/images/bar.jpg");
   width: 30px;
   animation-name: mymove;
