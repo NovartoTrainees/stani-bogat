@@ -15,11 +15,11 @@ import {
   FirstStage,
   GameOver,
   Gold,
-  Silver,
+  Silver
 } from "./dom-manipulation/modal.js";
 
 await fetchQuestions();
 
 renderNextQuestionAndAnswers();
 
-
+document.body.appendChild(new AudienceModal([32, 65, 23, 77]));

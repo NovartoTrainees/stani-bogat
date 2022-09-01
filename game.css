@@ -9,7 +9,7 @@ body {
   width: 1518px;
   margin: auto;
   background-position-y: -70px;
-  background-position-x: -215px;
+  background-position-x: -210px;
   background-repeat: no-repeat;
   display: none;
 }
@@ -428,18 +428,98 @@ body {
   transition: 0.5s;
 }
 
-.one,
-.two,
-.three,
-.four {
-  position: relative;
-  top: 60px;
-  left: 30px;
-  width: 30px;
-  height: 100px;
-  background-color: #170557;
+.first-bar {
+  position: absolute;
+  content: "";
+  bottom: 50%;
+  left: 30%;
+  background-color: aqua;
+  width: 50px;
+  animation-fill-mode: forwards;
 }
 
+.second-bar {
+  position: absolute;
+  content: "";
+  bottom: 50%;
+  left: 35%;
+  background-color: aqua;
+  width: 50px;
+  animation-fill-mode: forwards;
+}
+
+.third-bar {
+  position: absolute;
+  content: "";
+  bottom: 50%;
+  left: 40%;
+  background-color: aqua;
+  width: 50px;
+  animation-fill-mode: forwards;
+}
+
+.fourt-bar {
+  position: absolute;
+  content: "";
+  bottom: 50%;
+  left: 45%;
+  background-color: aqua;
+  width: 50px;
+  animation-fill-mode: forwards;
+}
+
+.activate-animation-first-bar {
+  position: absolute;
+  content: "";
+  bottom: 60%;
+  left: 43%;
+  background-image: url("/images/bar.jpg");
+  width: 30px;
+  animation-name: mymove;
+  animation-duration: 5s;
+}
+
+.activate-animation-second-bar {
+  position: absolute;
+  content: "";
+  bottom: 60%;
+  left: 47%;
+  background-image: url("/images/bar.jpg");
+  width: 30px;
+  animation-name: mymove;
+  animation-duration: 5s;
+}
+
+.activate-animation-third-bar {
+  position: absolute;
+  content: "";
+  bottom: 60%;
+  left: 51%;
+  background-image: url("/images/bar.jpg");
+  width: 30px;
+  animation-name: mymove;
+  animation-duration: 5s;
+}
+
+.activate-animation-fourt-bar {
+  position: absolute;
+  content: "";
+  bottom: 60%;
+  left: 55%;
+  background-image: url("/images/bar.jpg");
+  width: 30px;
+  animation-name: mymove;
+  animation-duration: 5s;
+}
+
+@keyframes mymove {
+  from {
+    height: 0px;
+  }
+  to {
+    height: 100px;
+  }
+}
 @keyframes my1move {
   from {
     top: 60px;

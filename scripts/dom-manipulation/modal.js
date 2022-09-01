@@ -2,6 +2,7 @@ class Modal extends HTMLDivElement {
   window = document.createElement("div");
   continueButtonWrapper = document.createElement("div");
   continueButton = document.createElement("button");
+  // sheet = document.createElement('style')
 
   constructor() {
     super();
@@ -22,27 +23,50 @@ class Modal extends HTMLDivElement {
 }
 
 export class AudienceModal extends Modal {
+  container = document.createElement("div");
+  firstBarElement = document.createElement("div");
+  secondBarElement = document.createElement("div");
+  thirdBarElement = document.createElement("div");
+  fourtBarElement = document.createElement("div");
+
   constructor(percentages) {
     super();
     this.window.id = "modal-audience";
-    const container = document.createElement("div");
-    const bar1 = document.createElement("div");
-    const mask1 = document.createElement("div");
-    bar1.classList.add("bar")
-    mask1.classList.add("one")
 
-    container.appendChild(bar1);
-    container.appendChild(mask1);
-    this.window.appendChild(container)
 
-    function changeWidth(percentages) {
-      mask1.style.top= -`${percentages}` + 'px';// mask`s end point
-      mask1.style.animation = `my1move ${2}s ease-out`;
-      console.log("test", container.childNodes);
-    }
-      setTimeout(()=>{
-        changeWidth(0);
-      },1000)
+    this.firstBarElement.classList.add("first-bar");
+    this.secondBarElement.classList.add("second-bar");
+    this.thirdBarElement.classList.add("third-bar");
+    this.fourtBarElement.classList.add("fourt-bar");
+
+    this.container.appendChild(this.fourtBarElement);
+    this.container.appendChild(this.thirdBarElement);
+    this.container.appendChild(this.secondBarElement);
+    this.container.appendChild(this.firstBarElement);
+
+    this.window.appendChild(this.container);
+
+    this.firstBarElement.classList.add("activate-animation-first-bar");
+    this.firstBarElement.style.maxHeight = `${percentages[0]}` + "px";
+
+    console.log(percentages[0]);
+
+    this.secondBarElement.classList.add("activate-animation-second-bar");
+    this.secondBarElement.style.maxHeight = `${percentages[1]}` + "px";
+
+    console.log(percentages[1]);
+
+    this.thirdBarElement.classList.add("activate-animation-third-bar");
+    this.thirdBarElement.style.maxHeight = `${percentages[2]}` + "px";
+    
+    console.log(percentages[2]);
+    
+    this.fourtBarElement.classList.add("activate-animation-fourt-bar");
+    this.fourtBarElement.style.maxHeight = `${percentages[3]}` + "px";
+    
+    console.log(percentages[3]);
+
+    console.log("test", this.container.childNodes);
   }
 }
 
@@ -179,21 +203,21 @@ window.customElements.define("game-over-modal", GameOver, {
 });
 
 window.customElements.define("first-stage-modal", FirstStage, {
-  extends: "div",
+  extends: "div"
 });
 
 window.customElements.define("bronze-player-modal", Bronze, {
-  extends: "div",
+  extends: "div"
 });
 
 window.customElements.define("silver-player-modal", Silver, {
-  extends: "div",
+  extends: "div"
 });
 
 window.customElements.define("elite-player-modal", Elite, {
-  extends: "div",
+  extends: "div"
 });
 
 window.customElements.define("gold-player-modal", Gold, {
-  extends: "div",
+  extends: "div"
 });
