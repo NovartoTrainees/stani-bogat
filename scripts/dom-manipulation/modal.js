@@ -2,6 +2,7 @@ class Modal extends HTMLDivElement {
   window = document.createElement("div");
   continueButtonWrapper = document.createElement("div");
   continueButton = document.createElement("button");
+  // sheet = document.createElement('style')
 
   constructor() {
     super();
@@ -31,7 +32,6 @@ export class AudienceModal extends Modal {
   constructor(percentages) {
     super();
     this.window.id = "modal-audience";
-    this.container.id = "bar-container";
 
     this.firstBarElement.classList.add("first-bar");
     this.secondBarElement.classList.add("second-bar");
@@ -42,23 +42,27 @@ export class AudienceModal extends Modal {
     this.container.appendChild(this.thirdBarElement);
     this.container.appendChild(this.secondBarElement);
     this.container.appendChild(this.firstBarElement);
+
     this.window.appendChild(this.container);
 
-    this.firstBarElement.style.maxHeight = `${percentages[0]}` + "px;";
     this.firstBarElement.classList.add("activate-animation-first-bar");
+    this.firstBarElement.style.maxHeight = `${percentages[0]}` + "px";
+
     console.log(percentages[0]);
 
-    this.secondBarElement.style.maxHeight = `${percentages[1]}` + "px;";
     this.secondBarElement.classList.add("activate-animation-second-bar");
+    this.secondBarElement.style.maxHeight = `${percentages[1]}` + "px";
+
     console.log(percentages[1]);
 
-    this.thirdBarElement.style.maxHeight = `${percentages[2]}` + "px;";
-
     this.thirdBarElement.classList.add("activate-animation-third-bar");
+    this.thirdBarElement.style.maxHeight = `${percentages[2]}` + "px";
+
     console.log(percentages[2]);
 
-    this.fourtBarElement.style.maxHeight = `${percentages[3]}` + "px;";
     this.fourtBarElement.classList.add("activate-animation-fourt-bar");
+    this.fourtBarElement.style.maxHeight = `${percentages[3]}` + "px";
+
     console.log(percentages[3]);
 
     console.log("test", this.container.childNodes);
