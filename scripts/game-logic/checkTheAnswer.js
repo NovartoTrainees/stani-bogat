@@ -52,7 +52,6 @@ function checkTheAnswer(event) {
       } else if (getQuestionIndex() === 16) {
         document.body.appendChild(new modals.Gold("$100,000"));
       }
-      // gold modal will be displayed at the end of the game
     } else {
       sounds.PlayWrongAnswer().play();
       elements.answerArray.forEach((button) => {
