@@ -76,6 +76,11 @@ function checkTheAnswer(event) {
 
       console.log(getCertainSum());
 
+      /**
+       *
+       * KOCETO:
+       *
+       */
       if (getCertainSum() === 0) {
         document.body.appendChild(new modals.GameOver());
       }
