@@ -474,4 +474,20 @@ body {
   transition-duration: 2s;
 }
 
+#disabled-hint-fifty {
+  pointer-events: none;
+  background-image: url("images/joker_x.png"), url("images/50_50.png");
+  background-position: center;
+  width: 90px;
+  height: 58px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  border: none;
+  background-repeat: no-repeat;
+  border-radius: 30px;
+  background-size: 80%, 100%;
+  background-color: transparent;
+}
+
 /*# sourceMappingURL=game.css.map */
