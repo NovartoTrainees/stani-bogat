@@ -28,7 +28,7 @@ function fiftyFiftyHint() {
     }
   });
 
-  elements.hints.fiftyFifty.disabled = true;
+  elements.hints.fiftyFifty.setAttribute("id", "disabled-hint-fifty");
 };
 
 function callAFriend() {
