@@ -8,12 +8,11 @@ export function PlayPhoneAFriend() {
   return PlayAudioFile("sounds/phone-a-friend.mp3");
 }
 export function PlayWrongAnswer() {
-  return PlayAudioFile("sounds/wrong-answer.mp3");
+  return PlayAudioFile("sounds/phone-a-friend.mp3");
 }
 export function PlayHundredToThousand() {
   const audio = PlayAudioFile("sounds/soundQuestionFrom100To1000.mp3");
   audio.loop = true;
-  return audio;
 }
 export function PlayThousandToFiftyThousand() {
   const audio = PlayAudioFile("sounds/soundQuestionFrom1000To50000.mp3");
