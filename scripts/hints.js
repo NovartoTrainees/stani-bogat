@@ -1,5 +1,6 @@
 import { questions } from "./variables.js";
 import * as elements from "./dom-manipulation/elements.js";
+import * as modals from "./dom-manipulation/modal.js";
 
 elements.hints.fiftyFifty.addEventListener('click', fiftyFiftyHint);
 elements.hints.callFriend.addEventListener('click', callAFriend);
@@ -38,7 +39,7 @@ function callAFriend() {
   const quotes = [
     "Hi, my old friend! This is a tough question but I think that the correct answer is",
     "I'm pretty sure that you have to mark",
-    "Please go and push",
+    "You can go ahead and mark",
     "Hi, I believe the correct one is",
   ];
 
@@ -55,9 +56,9 @@ function callAFriend() {
   const incorrectAnswerLetter = answerToLetterReference[Array.from(elements.answerArray).map(btn => btn.textContent).indexOf(current_question.answers[randomIndex])];
 
   if (randomGuess < 0.5) {
-    return `${quotes[randomIndex]} ${correctAnswerLetter}`;
+    return document.body.appendChild(new modals.CallFriend(`${quotes[randomIndex]} ${correctAnswerLetter}`));
   } else if (randomGuess >= 0.5 && randomGuess <= 0.9) {
-    return `${quotes[randomIndex]} ${incorrectAnswerLetter}`;
+    return document.body.appendChild(new modals.CallFriend(`${quotes[randomIndex]} ${incorrectAnswerLetter}`));
   } else {
     return "I really don't know the answer";
   }
