@@ -1,4 +1,5 @@
 import { questions, questionsDifficulty } from "../variables.js";
+import {dummyAnswer} from "../dom-manipulation/elements.js"
 
 const populateQuestions = (data) => {
   console.log(data);
@@ -13,7 +14,6 @@ const populateQuestions = (data) => {
 const transformData = (data) => {
   return data.map((questionObject) => {
     let { question, correct_answer, incorrect_answers } = questionObject;
-    let dummyAnswer = document.getElementById("dummyAnswer");
     dummyAnswer.innerHTML = correct_answer;
     correct_answer = dummyAnswer.textContent;
 
