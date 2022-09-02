@@ -1,11 +1,7 @@
 import { getQuestionIndex } from "../variables.js";
 import * as sounds from "../sounds.js";
-<<<<<<< HEAD
-export const temp = Array.from(document.querySelectorAll(".sum")).reverse();
-import { ConfettiGenerator } from "../node_modules/confetti-js/src/confetti.js";
-=======
 export const stages = Array.from(document.querySelectorAll(".sum")).reverse();
->>>>>>> main
+
 
 export function updateStage() {
   backgroundSounds();

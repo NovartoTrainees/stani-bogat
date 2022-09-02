@@ -181,24 +181,6 @@ export class GameExit extends Modal {
   }
 }
 
-export class GameExit extends Modal {
-  heading = document.createElement("h3");
-  paragraph = document.createElement("p");
-
-  constructor() {
-    super();
-
-    this.window.id = "modal-game-over";
-
-    this.heading.textContent = "BETTER LUCK NEXT TIME,";
-
-    this.paragraph.textContent =
-      "we hope to see you again, you are leaving empty handed";
-    GameOver;
-    this.window.appendChild(this.heading);
-    this.window.appendChild(this.paragraph);
-  }
-}
 
 export class FirstStage extends Modal {
   heading = document.createElement("h3");
