@@ -1,5 +1,7 @@
+import { NoResponseModal } from "../dom-manipulation/modal.js";
+
 const handleError = (error) => {
-  console.error(error);
+  document.body.appendChild(new NoResponseModal());
 };
 
 export default handleError;

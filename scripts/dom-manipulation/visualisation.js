@@ -1,8 +1,8 @@
 import * as elements from "./elements.js";
 import { questions } from "../variables.js";
+import { NoResponseModal } from "./modal.js";
 
 function renderNextQuestionAndAnswers() {
-
   console.log(questions[0]);
   renderQuestion();
 
@@ -11,8 +11,7 @@ function renderNextQuestionAndAnswers() {
     answerButton.classList.remove("correct");
     answerButton.classList.remove("selected");
     answerButton.classList.remove("disabled");
-    answerButton.parentElement.classList.remove("disabled")
-    
+    answerButton.parentElement.classList.remove("disabled");
   });
 }
 

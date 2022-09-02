@@ -11,4 +11,8 @@ import * as modals from "./dom-manipulation/modal.js";
 
 await fetchQuestions();
 
-renderNextQuestionAndAnswers();
+try {
+  renderNextQuestionAndAnswers();
+} catch (error) {
+  document.body.appendChild(new modals.NoResponseModal());
+}

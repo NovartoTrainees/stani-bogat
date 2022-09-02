@@ -2,9 +2,10 @@ import { questions } from "./variables.js";
 import * as elements from "./dom-manipulation/elements.js";
 import * as modals from "./dom-manipulation/modal.js";
 
-elements.hints.fiftyFifty.addEventListener('click', fiftyFiftyHint);
-elements.hints.callFriend.addEventListener('click', callAFriend);
-elements.hints.crowd.addEventListener('click', askTheAudience);
+elements.hints.fiftyFifty.addEventListener("click", fiftyFiftyHint);
+
+elements.hints.callFriend.addEventListener("click", callAFriend);
+elements.hints.crowd.addEventListener("click", askTheAudience);
 
 function fiftyFiftyHint() {
   const current_question = questions[0];
@@ -23,64 +24,86 @@ function fiftyFiftyHint() {
 
   elements.answerArray.forEach((button) => {
     if (!current_question.answers.includes(button.textContent)) {
-      button.textContent = '';
-      button.classList.add('disabled');
+      button.textContent = "";
     }
   });
 
   elements.hints.fiftyFifty.setAttribute("id", "disabled-hint-fifty");
-};
+}
 
 function callAFriend() {
   const randomGuess = Math.random();
   const current_question = questions[0];
-  const randomIndex = Math.floor(Math.random() * current_question.answers.length);
+  const randomIndex = Math.floor(
+    Math.random() * current_question.answers.length
+  );
 
   const quotes = [
-    "Hi, my old friend! This is a tough question but I think that the correct answer is",
-    "I'm pretty sure that you have to mark",
+    "I think that the correct answer is",
+    "I'm pretty sure that it's",
     "You can go ahead and mark",
-    "Hi, I believe the correct one is",
+    "I believe the correct one is",
   ];
 
   const answerToLetterReference = {
-    0: 'A',
-    1: 'B',
-    2: 'C',
-    3: 'D'
+    0: "A",
+    1: "B",
+    2: "C",
+    3: "D",
   };
 
   //Converting Node list into an array and linking its index to a letter
 
-  const correctAnswerLetter = answerToLetterReference[Array.from(elements.answerArray).map(btn => btn.textContent).indexOf(current_question.correct_answer)];
-  const incorrectAnswerLetter = answerToLetterReference[Array.from(elements.answerArray).map(btn => btn.textContent).indexOf(current_question.answers[randomIndex])];
+  const correctAnswerLetter =
+    answerToLetterReference[
+      Array.from(elements.answerArray)
+        .map((btn) => btn.textContent)
+        .indexOf(current_question.correct_answer)
+    ];
+  const incorrectAnswerLetter =
+    answerToLetterReference[
+      Array.from(elements.answerArray)
+        .map((btn) => btn.textContent)
+        .indexOf(current_question.answers[randomIndex])
+    ];
 
+  elements.hints.callFriend.setAttribute("id", "disabled-hint-phone");
   if (randomGuess < 0.5) {
-    return document.body.appendChild(new modals.CallFriend(`${quotes[randomIndex]} ${correctAnswerLetter}`));
+    return document.body.appendChild(
+      new modals.CallFriend(`${quotes[randomIndex]} ${correctAnswerLetter}`)
+    );
   } else if (randomGuess >= 0.5 && randomGuess <= 0.9) {
-    return document.body.appendChild(new modals.CallFriend(`${quotes[randomIndex]} ${incorrectAnswerLetter}`));
+    return document.body.appendChild(
+      new modals.CallFriend(`${quotes[randomIndex]} ${incorrectAnswerLetter}`)
+    );
   } else {
-    return document.body.appendChild(new modals.CallFriend("I really don't know the answer!"));;
+
+    return document.body.appendChild(
+      new modals.CallFriend("I don't really know the answer!")
+    );
+
   }
-};
+}
 
 function askTheAudience() {
   const current_question = questions[0];
   let randomIndex = Math.floor(Math.random() * current_question.answers.length);
-
+  elements.hints.crowd.setAttribute("id", "disabled-hint-audience");
   let audiencePercentage = {};
   audiencePercentage = current_question.answers.reduce((accumulator, value) => {
+    console.log(accumulator, value);
     return { ...accumulator, [value]: 0 };
   }, {});
 
   audiencePercentage[current_question.correct_answer] = 50;
+  console.log(audiencePercentage);
 
   for (let i = 0; i < 50; i++) {
     randomIndex = Math.floor(Math.random() * current_question.answers.length);
     audiencePercentage[current_question.answers[randomIndex]] += 1;
   }
 
-  return Object.values(audiencePercentage);
+  document.body.appendChild(new modals.AudienceModal(Object.values(audiencePercentage)));
 };
 
 export { fiftyFiftyHint, callAFriend, askTheAudience };
