@@ -25,6 +25,7 @@ function fiftyFiftyHint() {
   elements.answerArray.forEach((button) => {
     if (!current_question.answers.includes(button.textContent)) {
       button.textContent = "";
+      button.classList.add("disabled");
     }
   });
 
@@ -56,15 +57,15 @@ function callAFriend() {
 
   const correctAnswerLetter =
     answerToLetterReference[
-    Array.from(elements.answerArray)
-      .map((btn) => btn.textContent)
-      .indexOf(current_question.correct_answer)
+      Array.from(elements.answerArray)
+        .map((btn) => btn.textContent)
+        .indexOf(current_question.correct_answer)
     ];
   const incorrectAnswerLetter =
     answerToLetterReference[
-    Array.from(elements.answerArray)
-      .map((btn) => btn.textContent)
-      .indexOf(current_question.answers[randomIndex])
+      Array.from(elements.answerArray)
+        .map((btn) => btn.textContent)
+        .indexOf(current_question.answers[randomIndex])
     ];
 
   elements.hints.callFriend.setAttribute("id", "disabled-hint-phone");
@@ -77,11 +78,9 @@ function callAFriend() {
       new modals.CallFriend(`${quotes[randomIndex]} ${incorrectAnswerLetter}`)
     );
   } else {
-
     return document.body.appendChild(
       new modals.CallFriend("I don't really know the answer!")
     );
-
   }
 }
 
@@ -102,17 +101,21 @@ function askTheAudience() {
   }
 
   const audiencePercentageValues = [];
-  const presentAnswers = Array.from(elements.answerArray).map((answer) => answer.textContent);
+  const presentAnswers = Array.from(elements.answerArray).map(
+    (answer) => answer.textContent
+  );
 
   for (let answer of presentAnswers) {
-    if (answer === '') {
+    if (answer === "") {
       audiencePercentageValues.push(0);
     } else {
       audiencePercentageValues.push(audiencePercentage[answer]);
     }
   }
 
-  document.body.appendChild(new modals.AudienceModal(Object.values(audiencePercentageValues)));
-};
+  document.body.appendChild(
+    new modals.AudienceModal(Object.values(audiencePercentageValues))
+  );
+}
 
 export { fiftyFiftyHint, callAFriend, askTheAudience };

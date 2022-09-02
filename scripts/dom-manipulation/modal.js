@@ -98,7 +98,6 @@ export class AudienceModal extends Modal {
 
     this.fourtBarElement.classList.add("activate-animation-fourt-bar");
     this.fourtBarElement.style.maxHeight = `${percentages[3]}` + "px";
-
   }
 }
 
@@ -131,7 +130,11 @@ export class GameOver extends Modal {
 
     this.heading.textContent = "SORRY,";
 
-    this.paragraph.innerHTML = `${money > 0 ? `You are leaving with:<br/> $${money}`: 'You didn\'t win anything!'}`;
+    this.paragraph.innerHTML = `${
+      money > 0
+        ? `You are leaving with:<br/> $${money}`
+        : "You didn't win anything!"
+    }`;
 
     this.window.appendChild(this.heading);
     this.window.appendChild(this.paragraph);
@@ -153,7 +156,9 @@ export class GameExit extends Modal {
 
     this.heading.textContent = "Better luck next time.";
 
-    this.paragraph.innerHTML = `${money > 0 ? `You are leaving with:<br/> $${money}`: ''}`;
+    this.paragraph.innerHTML = `${
+      money > 0 ? `You are leaving with:<br/> $${money}` : ""
+    }`;
 
     this.window.appendChild(this.heading);
     this.window.appendChild(this.paragraph);
@@ -162,7 +167,7 @@ export class GameExit extends Modal {
       location.reload();
     });
 
-    this.continueButton.textContent = "Exit"
+    this.continueButton.textContent = "Exit";
   }
 }
 
@@ -277,7 +282,7 @@ export class Gold extends WinBadge {
       "Congrats! Kudos for turning your knowledge into gold"
     );
 
-    this.continueButton.addEventListener(() => {
+    this.continueButton.addEventListener("click", () => {
       location.reload();
     });
   }

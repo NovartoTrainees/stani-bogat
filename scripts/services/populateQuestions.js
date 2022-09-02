@@ -1,5 +1,5 @@
 import { questions, questionsDifficulty } from "../variables.js";
-import { dummyAnswer } from "../dom-manipulation/elements.js"
+import { dummyAnswer } from "../dom-manipulation/elements.js";
 
 const populateQuestions = (data) => {
   const transformed_data = transformData(data);
@@ -26,8 +26,7 @@ const transformData = (data) => {
     return {
       question,
       correct_answer,
-      answers: [...incorrect_answers].sort((a, b) => a - b)
-
+      answers: [...incorrect_answers].sort((a, b) => a.localeCompare(b)),
     };
   });
 };
