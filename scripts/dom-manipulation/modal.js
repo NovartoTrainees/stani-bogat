@@ -1,3 +1,8 @@
+import fetchQuestions from "../services/fetchQuestions.js";
+import populateQuestions from "../services/populateQuestions.js";
+import { questions } from "../variables.js";
+import renderNextQuestionAndAnswers from "./visualisation.js";
+
 class Modal extends HTMLDivElement {
   window = document.createElement("div");
   continueButtonWrapper = document.createElement("div");
@@ -181,6 +186,31 @@ export class GameExit extends Modal {
   }
 }
 
+export class NoResponseModal extends Modal {
+  heading = document.createElement("h3");
+  paragraph = document.createElement("p");
+
+  constructor() {
+    super();
+
+    this.window.id = "modal-game-over";
+
+    this.heading.textContent = "Couldn't load question";
+
+    this.paragraph.innerHTML = `please try again`;
+
+    this.window.appendChild(this.heading);
+    this.window.appendChild(this.paragraph);
+
+    this.continueButton.addEventListener("click", async () => {
+      questions.splice(0);
+      await fetchQuestions();
+      renderNextQuestionAndAnswers();
+      this.remove();
+    });
+  }
+}
+
 export class FirstStage extends Modal {
   heading = document.createElement("h3");
   paragraph = document.createElement("p");
@@ -282,6 +312,10 @@ window.customElements.define("game-over-modal", GameOver, {
 });
 
 window.customElements.define("game-exit-modal", GameExit, {
+  extends: "div",
+});
+
+window.customElements.define("no-response-modal", NoResponseModal, {
   extends: "div",
 });
 

@@ -7,13 +7,16 @@ const BASE_URL = "https://opentdb.com/api.php";
  * Fetch Questions..
  * @param {string} difficulty - Default: easy. Possible values: easy, medium, hard.
  */
-const fetchQuestions = (difficulty = "easy") => {
+const fetchQuestions = async (difficulty = "easy") => {
   const url = `${BASE_URL}?amount=5&difficulty=${difficulty}&type=multiple&category=21`;
 
-  return fetch(url)
-    .then((response) => response.json())
-    .then((data) => populateQuestions(data.results))
-    .catch((error) => handleError(error));
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    populateQuestions(data.results);
+  } catch (error) {
+    return handleError(error);
+  }
 };
 
 export default fetchQuestions;
