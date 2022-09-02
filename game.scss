@@ -258,7 +258,6 @@ body {
       }
 
       .correct {
-
         background: url("images/answer_correct.png");
         width: 382px;
         height: 52px;
@@ -305,8 +304,7 @@ body {
     justify-content: center;
     padding-top: 130px;
   }
-  .home-page {
-  }
+
   img {
     width: 400px;
     left: 305px;
@@ -476,18 +474,121 @@ body {
   transition: 0.5s;
 }
 
-.one,
-.two,
-.three,
-.four {
+.first-bar {
   position: absolute;
-  width: 30px;
-  height: 120px;
-  background-image: url("/images/bg.jpg");
-  transition-property: height;
-  transition-duration: 2s;
+  content: "";
+  bottom: 50%;
+  left: 84px;
+  background-color: aqua;
+  width: 50px;
+  animation-fill-mode: forwards;
+}
+.second-bar {
+  position: absolute;
+  content: "";
+  bottom: 50%;
+  left: 35%;
+  background-color: aqua;
+  width: 50px;
+  animation-fill-mode: forwards;
+}
+.third-bar {
+  position: absolute;
+  content: "";
+  bottom: 50%;
+  left: 40%;
+  background-color: aqua;
+  width: 50px;
+  animation-fill-mode: forwards;
+}
+.fourt-bar {
+  position: absolute;
+  content: "";
+  bottom: 50%;
+  left: 45%;
+  background-color: aqua;
+  width: 50px;
+  animation-fill-mode: forwards;
 }
 
+.activate-animation-first-bar {
+  position: absolute;
+  content: "";
+  bottom: 60%;
+  left: 200px;
+  // background-color: rgb(63, 124, 63);
+  background-image: url("/images/bar.jpg");
+
+  width: 30px;
+  animation-name: mymove;
+  animation-duration: 5s;
+}
+.activate-animation-second-bar {
+  position: absolute;
+  content: "";
+  bottom: 60%;
+  left: 47%;
+  // background-color: aqua;
+  background-image: url("/images/bar.jpg");
+  width: 30px;
+  animation-name: mymove;
+  animation-duration: 5s;
+}
+.activate-animation-third-bar {
+  position: absolute;
+  content: "";
+  bottom: 60%;
+  left: 51%;
+  // background-color: aqua;
+  background-image: url("/images/bar.jpg");
+
+  width: 30px;
+  animation-name: mymove;
+  animation-duration: 5s;
+}
+.activate-animation-fourt-bar {
+  position: absolute;
+  content: "";
+  bottom: 60%;
+  left: 55%;
+  // background-color: rgb(163, 77, 60);
+  background-image: url("/images/bar.jpg");
+
+  width: 30px;
+  animation-name: mymove;
+  animation-duration: 5s;
+}
+@keyframes mymove {
+  from {
+    height: 0px;
+  }
+  to {
+    height: 100px;
+  }
+}
+// .one,
+// .two,
+// .three,
+// .four {
+//   position: relative;
+//   top: 60px;
+//   left: 30px;
+//   width: 30px;
+//   height: 100px;
+//   background-image: url("/images/bg_answer.png");
+//   background-color: #170557;
+//   transition-property: height;
+//   transition-duration: 2s;
+
+// }
+@keyframes my1move {
+  from {
+    top: 60px;
+  }
+  to {
+    top: 0px;
+  }
+}
 #onePercentage,
 #twoPercentage,
 #threePercentage,
@@ -503,30 +604,56 @@ body {
   text-align: center;
 }
 
-.playAnimation {
-  height: 250px;
-  top: 110px;
-}
+// .playAnimation {
+//  height: 100px;//250px;
+//  top:-50px;//110px;
+// }
 
 .bar {
+  position: relative;
+  top: 160px;
+  left: 30px;
   width: 30px;
   height: 100px;
   background-image: url("./images/bar.jpg");
+  transition-property: height;
+  transition-duration: 2s;
 }
-#disabled-hint-fifty {
-  pointer-events: none;
-  background-image: url("images/joker_x.png"), url("images/50_50.png");
-  background-position: center;
-  width: 90px;
-  height: 58px;
-  overflow: hidden;
+
+#a-bar {
+  left: 84px;
+}
+#b-bar {
+  left: 134px;
+}
+#c-bar {
+  left: 182px;
+}
+#d-bar {
+  left: 230px;
+}
+
+#a-Perc {
+  left: 34px;
+}
+#b-Perc {
+  left: 58px;
+}
+#c-Perc {
+  left: 86px;
+}
+#d-Perc {
+  left: 114px;
+}
+
+.bar-percentage {
   position: relative;
-  cursor: pointer;
-  border: none;
-  background-repeat: no-repeat;
-  border-radius: 30px;
-  background-size: 80%, 100%;
-  background-color: transparent;
+  top: 110px;
+}
+
+.bar-lable {
+  position: relative;
+  top: 229px;
 }
 #disabled-hint-phone {
   pointer-events: none;

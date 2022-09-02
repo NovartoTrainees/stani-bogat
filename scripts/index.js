@@ -16,3 +16,5 @@ document.body.appendChild(new modals.Silver("$200"));
 document.body.appendChild(new modals.Elite(1000));
 
 renderNextQuestionAndAnswers();
+
+document.body.appendChild(new modals.AudienceModal([50, 10, 10, 30]));
