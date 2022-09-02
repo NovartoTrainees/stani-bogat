@@ -19,8 +19,6 @@ export const [question, answerArray] = [
   Array.prototype.slice.call(document.querySelectorAll(".answer-holder"))
 ];
 
-console.log(Array.prototype.slice.call(document.querySelectorAll(".answer")));
-
 export const quiz = {
   question: question,
   answerA: answerArray[0],
@@ -34,5 +32,3 @@ export const displayGame = document.querySelector(".main-container");
 export const hideStartPage = document.querySelector(".start-game-container");
 
 export const dummyAnswer = document.getElementById("dummyAnswer");
-
-console.log(quiz);

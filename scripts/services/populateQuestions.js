@@ -2,8 +2,6 @@ import { questions, questionsDifficulty } from "../variables.js";
 import { dummyAnswer } from "../dom-manipulation/elements.js"
 
 const populateQuestions = (data) => {
-  console.log(data);
-
   const transformed_data = transformData(data);
 
   transformed_data.forEach((question) => questions.push(question));
