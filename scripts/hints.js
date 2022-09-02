@@ -1,5 +1,6 @@
 import { questions } from "./variables.js";
 import * as elements from "./dom-manipulation/elements.js";
+import * as modals from "./dom-manipulation/modal.js";
 
 elements.hints.fiftyFifty.addEventListener('click', fiftyFiftyHint);
 elements.hints.callFriend.addEventListener('click', callAFriend);
@@ -23,7 +24,7 @@ function fiftyFiftyHint() {
   elements.answerArray.forEach((button) => {
     if (!current_question.answers.includes(button.textContent)) {
       button.textContent = '';
-      button.classList.add('disabled');
+
     }
   });
 
@@ -38,7 +39,7 @@ function callAFriend() {
   const quotes = [
     "Hi, my old friend! This is a tough question but I think that the correct answer is",
     "I'm pretty sure that you have to mark",
-    "Please go and push",
+    "You can go ahead and mark",
     "Hi, I believe the correct one is",
   ];
 
@@ -54,19 +55,20 @@ function callAFriend() {
   const correctAnswerLetter = answerToLetterReference[Array.from(elements.answerArray).map(btn => btn.textContent).indexOf(current_question.correct_answer)];
   const incorrectAnswerLetter = answerToLetterReference[Array.from(elements.answerArray).map(btn => btn.textContent).indexOf(current_question.answers[randomIndex])];
 
+  elements.hints.callFriend.setAttribute("id", "disabled-hint-phone");
   if (randomGuess < 0.5) {
-    return `${quotes[randomIndex]} ${correctAnswerLetter}`;
+    return document.body.appendChild(new modals.CallFriend(`${quotes[randomIndex]} ${correctAnswerLetter}`));
   } else if (randomGuess >= 0.5 && randomGuess <= 0.9) {
-    return `${quotes[randomIndex]} ${incorrectAnswerLetter}`;
+    return document.body.appendChild(new modals.CallFriend(`${quotes[randomIndex]} ${incorrectAnswerLetter}`));
   } else {
-    return "I really don't know the answer";
+    return document.body.appendChild(new modals.CallFriend("I really don't know the answer!"));;
   }
 };
 
 function askTheAudience() {
   const current_question = questions[0];
   let randomIndex = Math.floor(Math.random() * current_question.answers.length);
-
+  elements.hints.crowd.setAttribute("id", "disabled-hint-audience");
   let audiencePercentage = {};
   audiencePercentage = current_question.answers.reduce((accumulator, value) => {
     return { ...accumulator, [value]: 0 };
