@@ -4,7 +4,7 @@ import {
   incrementQuestionIndex,
   getQuestionIndex,
   replaceCertainSum,
-  getCertainSum
+  getCertainSum,
 } from "../variables.js";
 import * as elements from "../dom-manipulation/elements.js";
 import renderNextQuestionAndAnswers from "../dom-manipulation/visualisation.js";
@@ -25,23 +25,28 @@ function checkTheAnswer(event) {
   });
 
   const current_question = questions[0];
-  const isCorrectAnswer = current_question.correct_answer === event.target.textContent;
+  const isCorrectAnswer =
+    current_question.correct_answer === event.target.textContent;
   event.target.classList.add("selected");
 
-  setTimeout(() => {
+  setTimeout(async () => {
     if (isCorrectAnswer) {
       event.target.classList.add("correct");
       sounds.PlayCorrectAnswer().play();
       questions.shift();
 
       if (questions.length === 0) {
-        fetchQuestions(questionsDifficulty[0]);
+        await fetchQuestions(questionsDifficulty[0]);
       }
       updateStage();
       incrementQuestionIndex();
 
       setTimeout(() => {
-        renderNextQuestionAndAnswers();
+        try {
+          renderNextQuestionAndAnswers();
+        } catch (error) {
+          document.body.appendChild(new modals.NoResponseModal());
+        }
       }, 1000);
       if (getQuestionIndex() === 6) {
         document.body.appendChild(new modals.Bronze(500));

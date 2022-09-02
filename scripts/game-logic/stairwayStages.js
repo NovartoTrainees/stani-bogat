@@ -1,5 +1,6 @@
 import { getQuestionIndex } from "../variables.js";
 import * as sounds from "../sounds.js";
+
 export const stages = Array.from(document.querySelectorAll(".sum")).reverse();
 
 export function updateStage() {
@@ -30,6 +31,11 @@ export function backgroundSounds() {
   if (getQuestionIndex() === 14) {
     bgSound1000to50000.pause();
     bgSound100000.play();
+  }
+  if (getQuestionIndex() === 15) {
+    var confettiSettings = { target: "my-canvas" };
+    var confetti = new ConfettiGenerator(confettiSettings);
+    confetti.render();
   }
 }
 // to be tested and discuss with the others
