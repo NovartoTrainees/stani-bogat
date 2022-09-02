@@ -1,5 +1,5 @@
 import { questions, questionsDifficulty } from "../variables.js";
-import {dummyAnswer} from "../dom-manipulation/elements.js"
+import { dummyAnswer } from "../dom-manipulation/elements.js"
 
 const populateQuestions = (data) => {
   console.log(data);
@@ -28,7 +28,8 @@ const transformData = (data) => {
     return {
       question,
       correct_answer,
-      answers: [...incorrect_answers].sort(() => Math.random() - 0.5)
+      answers: [...incorrect_answers].sort((a, b) => a - b)
+
     };
   });
 };

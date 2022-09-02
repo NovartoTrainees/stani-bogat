@@ -17,4 +17,4 @@ await fetchQuestions();
 
 renderNextQuestionAndAnswers();
 
-document.body.appendChild(new modals.AudienceModal([50, 20, 10, 30]));
+

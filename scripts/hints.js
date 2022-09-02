@@ -90,10 +90,13 @@ function askTheAudience() {
   elements.hints.crowd.setAttribute("id", "disabled-hint-audience");
   let audiencePercentage = {};
   audiencePercentage = current_question.answers.reduce((accumulator, value) => {
+    console.log(accumulator, value)
     return { ...accumulator, [value]: 0 };
   }, {});
 
+
   audiencePercentage[current_question.correct_answer] = 50;
+  console.log(audiencePercentage)
 
   for (let i = 0; i < 50; i++) {
     randomIndex = Math.floor(Math.random() * current_question.answers.length);
@@ -102,10 +105,12 @@ function askTheAudience() {
 
   const audiencePercentageValues = Object.keys(audiencePercentage).map(
     function (key) {
+
       return audiencePercentage[key];
     }
   );
-
+  console.log(audiencePercentageValues)
+  document.body.appendChild(new modals.AudienceModal(audiencePercentageValues));
   // return audiencePercentageValues;
 }
 
