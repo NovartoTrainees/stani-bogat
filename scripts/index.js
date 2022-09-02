@@ -11,10 +11,10 @@ import * as modals from "./dom-manipulation/modal.js";
 
 await fetchQuestions();
 
-document.body.appendChild(new modals.Bronze("$200"));
-document.body.appendChild(new modals.Silver("$200"));
-document.body.appendChild(new modals.Elite(1000));
+// document.body.appendChild(new modals.Bronze("$200"));
+// document.body.appendChild(new modals.Silver("$200"));
+// document.body.appendChild(new modals.Elite(1000));
 
 renderNextQuestionAndAnswers();
 
-document.body.appendChild(new modals.AudienceModal([50, 10, 10, 30]));
+document.body.appendChild(new modals.AudienceModal([50, 20, 10, 30]));
