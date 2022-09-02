@@ -131,7 +131,7 @@ export class GameOver extends Modal {
 
     this.heading.textContent = "SORRY,";
 
-    this.paragraph.innerHTML = `you lost but you are <br/> leaving with $${money}`;
+    this.paragraph.innerHTML = `${money > 0 ? `You are leaving with:<br/> $${money}`: ''}`;
 
     this.window.appendChild(this.heading);
     this.window.appendChild(this.paragraph);
