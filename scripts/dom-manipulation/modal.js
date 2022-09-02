@@ -248,10 +248,6 @@ export class WinBadge extends Modal {
     this.window.appendChild(this.firstParagrpah);
     this.window.appendChild(this.winnings);
     this.window.appendChild(this.secondParagraph);
-
-    this.continueButton.addEventListener("click", () => {
-      location.reload();
-    });
   }
 }
 
@@ -259,7 +255,7 @@ export class Bronze extends WinBadge {
   constructor(winAmmount) {
     super(
       "../../images/bronze-badge.png",
-      "You won the title 'Bronze Player!' You reached level",
+      "You reached the title 'Bronze Player!'",
       winAmmount,
       "Congrats! The road ahead is hard, but achivable with solid knowledge"
     );
@@ -270,7 +266,7 @@ export class Silver extends WinBadge {
   constructor(winAmmount) {
     super(
       "../../images/silver-badge.png",
-      "You won the title 'Silver Player!' You reached level",
+      "You reached the title 'Silver Player!'",
       winAmmount,
       "Congrats! Your erudition compels admiration"
     );
@@ -281,7 +277,7 @@ export class Elite extends WinBadge {
   constructor(winAmmount) {
     super(
       "../../images/elit-badge.png",
-      "You won the title 'Elite Player!' You reached level",
+      "You reached the title 'Elite Player!'",
       winAmmount,
       "Congrats! Your erudition compels admiration"
     );
@@ -296,6 +292,10 @@ export class Gold extends WinBadge {
       winAmmount,
       "Congrats! Kudos for turning your knowledge into gold"
     );
+
+    this.continueButton.addEventListener(() => {
+      location.reload();
+    });
   }
 }
 
