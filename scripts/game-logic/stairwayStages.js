@@ -31,6 +31,7 @@ export function backgroundSounds() {
   if (getQuestionIndex() === 14) {
     bgSound1000to50000.pause();
     bgSound100000.play();
+  } if (getQuestionIndex() === 15) {
     var confettiSettings = { target: 'my-canvas' };
     var confetti = new ConfettiGenerator(confettiSettings);
     confetti.render();
