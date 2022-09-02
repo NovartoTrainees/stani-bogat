@@ -151,9 +151,9 @@ export class GameExit extends Modal {
 
     this.window.id = "modal-game-over";
 
-    this.heading.textContent = "Better luck next time,";
+    this.heading.textContent = "Better luck next time.";
 
-    this.paragraph.innerHTML = `you are leaving with:<br/> $${money}`;
+    this.paragraph.innerHTML = `${money > 0 ? `You are leaving with:<br/> $${money}`: ''}`;
 
     this.window.appendChild(this.heading);
     this.window.appendChild(this.paragraph);
@@ -161,6 +161,8 @@ export class GameExit extends Modal {
     this.continueButton.addEventListener("click", () => {
       location.reload();
     });
+
+    this.continueButton.textContent = "Exit"
   }
 }
 

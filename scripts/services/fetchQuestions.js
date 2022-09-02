@@ -1,7 +1,7 @@
 import handleError from "./handleFetchErrors.js";
 import populateQuestions from "./populateQuestions.js";
 
-const BASE_URL = "https://opentdb.com/api.php";
+let BASE_URL = "https://opentdb.com/api.php";
 
 /**
  * Fetch Questions..
@@ -9,6 +9,7 @@ const BASE_URL = "https://opentdb.com/api.php";
  */
 const fetchQuestions = async (difficulty = "easy") => {
   const url = `${BASE_URL}?amount=5&difficulty=${difficulty}&type=multiple`;
+
 
   try {
     const response = await fetch(url);
