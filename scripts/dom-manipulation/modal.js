@@ -90,24 +90,15 @@ export class AudienceModal extends Modal {
     this.firstBarElement.classList.add("activate-animation-first-bar");
     this.firstBarElement.style.maxHeight = `${percentages[0]}` + "px";
 
-    console.log(percentages[0]);
-
     this.secondBarElement.classList.add("activate-animation-second-bar");
     this.secondBarElement.style.maxHeight = `${percentages[1]}` + "px";
-
-    console.log(percentages[1]);
 
     this.thirdBarElement.classList.add("activate-animation-third-bar");
     this.thirdBarElement.style.maxHeight = `${percentages[2]}` + "px";
 
-    console.log(percentages[2]);
-
     this.fourtBarElement.classList.add("activate-animation-fourt-bar");
     this.fourtBarElement.style.maxHeight = `${percentages[3]}` + "px";
 
-    console.log(percentages[3]);
-
-    console.log("test", this.container.childNodes);
   }
 }
 

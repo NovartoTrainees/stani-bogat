@@ -56,15 +56,15 @@ function callAFriend() {
 
   const correctAnswerLetter =
     answerToLetterReference[
-      Array.from(elements.answerArray)
-        .map((btn) => btn.textContent)
-        .indexOf(current_question.correct_answer)
+    Array.from(elements.answerArray)
+      .map((btn) => btn.textContent)
+      .indexOf(current_question.correct_answer)
     ];
   const incorrectAnswerLetter =
     answerToLetterReference[
-      Array.from(elements.answerArray)
-        .map((btn) => btn.textContent)
-        .indexOf(current_question.answers[randomIndex])
+    Array.from(elements.answerArray)
+      .map((btn) => btn.textContent)
+      .indexOf(current_question.answers[randomIndex])
     ];
 
   elements.hints.callFriend.setAttribute("id", "disabled-hint-phone");
@@ -91,19 +91,28 @@ function askTheAudience() {
   elements.hints.crowd.setAttribute("id", "disabled-hint-audience");
   let audiencePercentage = {};
   audiencePercentage = current_question.answers.reduce((accumulator, value) => {
-    console.log(accumulator, value);
     return { ...accumulator, [value]: 0 };
   }, {});
 
   audiencePercentage[current_question.correct_answer] = 50;
-  console.log(audiencePercentage);
 
   for (let i = 0; i < 50; i++) {
     randomIndex = Math.floor(Math.random() * current_question.answers.length);
     audiencePercentage[current_question.answers[randomIndex]] += 1;
   }
 
-  document.body.appendChild(new modals.AudienceModal(Object.values(audiencePercentage)));
+  const audiencePercentageValues = [];
+  const presentAnswers = Array.from(elements.answerArray).map((answer) => answer.textContent);
+
+  for (let answer of presentAnswers) {
+    if (answer === '') {
+      audiencePercentageValues.push(0);
+    } else {
+      audiencePercentageValues.push(audiencePercentage[answer]);
+    }
+  }
+
+  document.body.appendChild(new modals.AudienceModal(Object.values(audiencePercentageValues)));
 };
 
 export { fiftyFiftyHint, callAFriend, askTheAudience };
