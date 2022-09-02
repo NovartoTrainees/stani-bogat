@@ -38,7 +38,7 @@ function callAFriend() {
 
   const quotes = [
     "I think the correct answer is",
-    "I'm pretty sure you have to mark",
+    "I'm pretty sure it's ",
     "You can go ahead and mark",
     "I believe the correct one is",
   ];
