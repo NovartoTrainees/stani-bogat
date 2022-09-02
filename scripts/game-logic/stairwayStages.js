@@ -1,11 +1,7 @@
 import { getQuestionIndex } from "../variables.js";
 import * as sounds from "../sounds.js";
-<<<<<<< HEAD
-export const temp = Array.from(document.querySelectorAll(".sum")).reverse();
-import { ConfettiGenerator } from "../node_modules/confetti-js/src/confetti.js";
-=======
+
 export const stages = Array.from(document.querySelectorAll(".sum")).reverse();
->>>>>>> main
 
 export function updateStage() {
   backgroundSounds();
@@ -35,8 +31,9 @@ export function backgroundSounds() {
   if (getQuestionIndex() === 14) {
     bgSound1000to50000.pause();
     bgSound100000.play();
-  } if (getQuestionIndex() === 15) {
-    var confettiSettings = { target: 'my-canvas' };
+  }
+  if (getQuestionIndex() === 15) {
+    var confettiSettings = { target: "my-canvas" };
     var confetti = new ConfettiGenerator(confettiSettings);
     confetti.render();
   }
