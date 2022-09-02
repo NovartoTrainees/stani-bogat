@@ -29,4 +29,10 @@ export const quiz = {
   answerD: answerArray[3]
 };
 
+export const playButton = document.querySelector(".play");
+export const displayGame = document.querySelector(".main-container");
+export const hideStartPage = document.querySelector(".start-game-container");
+
+export const dummyAnswer = document.getElementById("dummyAnswer");
+
 console.log(quiz);

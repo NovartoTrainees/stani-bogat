@@ -11,7 +11,9 @@ function fiftyFiftyHint() {
   const current_question = questions[0];
 
   while (current_question.answers.length > 2) {
-    const correct_answer_index = current_question.answers.indexOf(current_question.correct_answer);
+    const correct_answer_index = current_question.answers.indexOf(
+      current_question.correct_answer
+    );
 
     const randomIndex = Math.floor(Math.random() * 4);
 
@@ -33,20 +35,23 @@ function fiftyFiftyHint() {
 function callAFriend() {
   const randomGuess = Math.random();
   const current_question = questions[0];
-  const randomIndex = Math.floor(Math.random() * current_question.answers.length);
+  const randomIndex = Math.floor(
+    Math.random() * current_question.answers.length
+  );
 
   const quotes = [
-    "Hi, my old friend! This is a tough question but I think that the correct answer is",
-    "I'm pretty sure that you have to mark",
+    "I think the correct answer is",
+    "I'm pretty sure you have to mark",
     "You can go ahead and mark",
-    "Hi, I believe the correct one is"
+
+    "I believe the correct one is",
   ];
 
   const answerToLetterReference = {
     0: "A",
     1: "B",
     2: "C",
-    3: "D"
+    3: "D",
   };
 
   //Converting Node list into an array and linking its index to a letter
@@ -65,11 +70,17 @@ function callAFriend() {
     ];
 
   if (randomGuess < 0.5) {
-    return document.body.appendChild(new modals.CallFriend(`${quotes[randomIndex]} ${correctAnswerLetter}`));
+    return document.body.appendChild(
+      new modals.CallFriend(`${quotes[randomIndex]} ${correctAnswerLetter}`)
+    );
   } else if (randomGuess >= 0.5 && randomGuess <= 0.9) {
-    return document.body.appendChild(new modals.CallFriend(`${quotes[randomIndex]} ${incorrectAnswerLetter}`));
+    return document.body.appendChild(
+      new modals.CallFriend(`${quotes[randomIndex]} ${incorrectAnswerLetter}`)
+    );
   } else {
-    return document.body.appendChild(new modals.CallFriend("I really don't know the answer!"));
+    return document.body.appendChild(
+      new modals.CallFriend("I don't really know the answer!")
+    );
   }
 }
 
@@ -89,9 +100,11 @@ function askTheAudience() {
     audiencePercentage[current_question.answers[randomIndex]] += 1;
   }
 
-  const audiencePercentageValues = Object.keys(audiencePercentage).map(function (key) {
-    return audiencePercentage[key];
-  });
+  const audiencePercentageValues = Object.keys(audiencePercentage).map(
+    function (key) {
+      return audiencePercentage[key];
+    }
+  );
 
   // return audiencePercentageValues;
 }

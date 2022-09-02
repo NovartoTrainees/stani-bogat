@@ -146,14 +146,14 @@ export class GameOver extends Modal {
   heading = document.createElement("h3");
   paragraph = document.createElement("p");
 
-  constructor() {
+  constructor(money) {
     super();
 
     this.window.id = "modal-game-over";
 
     this.heading.textContent = "SORRY,";
 
-    this.paragraph.textContent = "you lost, try again";
+    this.paragraph.innerHTML = `you lost but you are <br/> leaving with $${money}`;
 
     this.window.appendChild(this.heading);
     this.window.appendChild(this.paragraph);
