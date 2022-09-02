@@ -25,7 +25,6 @@ function fiftyFiftyHint() {
   elements.answerArray.forEach((button) => {
     if (!current_question.answers.includes(button.textContent)) {
       button.textContent = "";
-      button.classList.add("disabled");
     }
   });
 
@@ -58,15 +57,15 @@ function callAFriend() {
 
   const correctAnswerLetter =
     answerToLetterReference[
-      Array.from(elements.answerArray)
-        .map((btn) => btn.textContent)
-        .indexOf(current_question.correct_answer)
+    Array.from(elements.answerArray)
+      .map((btn) => btn.textContent)
+      .indexOf(current_question.correct_answer)
     ];
   const incorrectAnswerLetter =
     answerToLetterReference[
-      Array.from(elements.answerArray)
-        .map((btn) => btn.textContent)
-        .indexOf(current_question.answers[randomIndex])
+    Array.from(elements.answerArray)
+      .map((btn) => btn.textContent)
+      .indexOf(current_question.answers[randomIndex])
     ];
 
   elements.hints.callFriend.setAttribute("id", "disabled-hint-phone");

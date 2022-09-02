@@ -382,6 +382,7 @@ body {
 }
 
 #modal-audience {
+  position: relative;
   width: 355px;
   height: 369px;
   background-image: url("/images/audience.png");
@@ -475,88 +476,66 @@ body {
 }
 
 .first-bar {
-  position: absolute;
-  content: "";
-  bottom: 50%;
-  left: 84px;
-  background-color: aqua;
-  width: 50px;
   animation-fill-mode: forwards;
 }
 .second-bar {
-  position: absolute;
-  content: "";
-  bottom: 50%;
-  left: 35%;
-  background-color: aqua;
-  width: 50px;
   animation-fill-mode: forwards;
 }
 .third-bar {
-  position: absolute;
-  content: "";
-  bottom: 50%;
-  left: 40%;
-  background-color: aqua;
-  width: 50px;
   animation-fill-mode: forwards;
 }
 .fourt-bar {
-  position: absolute;
-  content: "";
-  bottom: 50%;
-  left: 45%;
-  background-color: aqua;
-  width: 50px;
   animation-fill-mode: forwards;
 }
 
 .activate-animation-first-bar {
-  position: absolute;
   content: "";
-  bottom: 60%;
-  left: 200px;
-  // background-color: rgb(63, 124, 63);
-  background-image: url("/images/bar.jpg");
-
+  background-image: url(/images/bar.jpg);
   width: 30px;
   animation-name: mymove;
   animation-duration: 5s;
 }
 .activate-animation-second-bar {
-  position: absolute;
   content: "";
-  bottom: 60%;
-  left: 47%;
-  // background-color: aqua;
-  background-image: url("/images/bar.jpg");
+  background-image: url(/images/bar.jpg);
   width: 30px;
   animation-name: mymove;
   animation-duration: 5s;
 }
 .activate-animation-third-bar {
-  position: absolute;
   content: "";
-  bottom: 60%;
-  left: 51%;
-  // background-color: aqua;
-  background-image: url("/images/bar.jpg");
-
+  background-image: url(/images/bar.jpg);
   width: 30px;
   animation-name: mymove;
   animation-duration: 5s;
 }
 .activate-animation-fourt-bar {
-  position: absolute;
   content: "";
-  bottom: 60%;
-  left: 55%;
-  // background-color: rgb(163, 77, 60);
-  background-image: url("/images/bar.jpg");
-
+  background-image: url(/images/bar.jpg);
   width: 30px;
   animation-name: mymove;
   animation-duration: 5s;
+}
+#modal-container-1 {
+  display: flex;
+  width: 100%;
+  position: relative;
+  height: 30%;
+  top: 40%;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+#modal-container-2 {
+  top: 45%;
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+}
+#modal-container-3 {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  top: 0%;
 }
 @keyframes mymove {
   from {
@@ -620,40 +599,20 @@ body {
   transition-duration: 2s;
 }
 
-#a-bar {
-  left: 84px;
-}
-#b-bar {
-  left: 134px;
-}
-#c-bar {
-  left: 182px;
-}
-#d-bar {
-  left: 230px;
-}
-
-#a-Perc {
-  left: 34px;
-}
-#b-Perc {
-  left: 58px;
-}
-#c-Perc {
-  left: 86px;
-}
-#d-Perc {
-  left: 114px;
-}
-
-.bar-percentage {
+#disabled-hint-fifty {
+  pointer-events: none;
+  background-image: url("images/joker_x.png"), url("images/50_50.png");
+  background-position: center;
+  width: 90px;
+  height: 58px;
+  overflow: hidden;
   position: relative;
-  top: 110px;
-}
-
-.bar-lable {
-  position: relative;
-  top: 229px;
+  cursor: pointer;
+  border: none;
+  background-repeat: no-repeat;
+  border-radius: 30px;
+  background-size: 80%, 100%;
+  background-color: transparent;
 }
 #disabled-hint-phone {
   pointer-events: none;
@@ -684,10 +643,4 @@ body {
   border-radius: 30px;
   background-size: 80%, 100%;
   background-color: transparent;
-}
-#my-canvas {
-  width: 100%;
-  display: flex;
-  position: fixed;
-  z-index: 1;
 }

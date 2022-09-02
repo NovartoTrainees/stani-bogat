@@ -24,6 +24,8 @@ class Modal extends HTMLDivElement {
 
 export class AudienceModal extends Modal {
   container = document.createElement("div");
+  container2 = document.createElement("div");
+  container3 = document.createElement("div");
   firstBarElement = document.createElement("div");
   secondBarElement = document.createElement("div");
   thirdBarElement = document.createElement("div");
@@ -47,41 +49,24 @@ export class AudienceModal extends Modal {
     this.secondBarElement.classList.add("second-bar");
     this.thirdBarElement.classList.add("third-bar");
     this.fourtBarElement.classList.add("fourt-bar");
+    this.container.id = "modal-container-1"
+    this.container2.id = "modal-container-2"
+    this.container3.id = "modal-container-3"
 
-    this.a.id = "a-bar";
-    this.b.id = "b-bar";
-    this.c.id = "c-bar";
-    this.d.id = "d-bar";
-
-    this.a.classList.add("bar-lable");
-    this.b.classList.add("bar-lable");
-    this.c.classList.add("bar-lable");
-    this.d.classList.add("bar-lable");
-
-    this.aPerc.id = "a-Perc";
-    this.bPerc.id = "b-Perc";
-    this.cPerc.id = "c-Perc";
-    this.dPerc.id = "d-Perc";
-
-    this.aPerc.classList.add("bar-percentage");
-    this.bPerc.classList.add("bar-percentage");
-    this.cPerc.classList.add("bar-percentage");
-    this.dPerc.classList.add("bar-percentage");
-
-    this.container.appendChild(this.fourtBarElement);
-    this.container.appendChild(this.thirdBarElement);
-    this.container.appendChild(this.secondBarElement);
     this.container.appendChild(this.firstBarElement);
+    this.container.appendChild(this.secondBarElement);
+    this.container.appendChild(this.thirdBarElement);
+    this.container.appendChild(this.fourtBarElement);
 
-    this.container.appendChild(this.a);
-    this.container.appendChild(this.b);
-    this.container.appendChild(this.c);
-    this.container.appendChild(this.d);
+    this.container2.appendChild(this.a);
+    this.container2.appendChild(this.b);
+    this.container2.appendChild(this.c);
+    this.container2.appendChild(this.d);
 
-    this.container.appendChild(this.aPerc);
-    this.container.appendChild(this.bPerc);
-    this.container.appendChild(this.cPerc);
-    this.container.appendChild(this.dPerc);
+    this.container3.appendChild(this.aPerc);
+    this.container3.appendChild(this.bPerc);
+    this.container3.appendChild(this.cPerc);
+    this.container3.appendChild(this.dPerc);
 
     this.a.textContent = "A";
     this.b.textContent = "B";
@@ -94,6 +79,8 @@ export class AudienceModal extends Modal {
     this.dPerc.textContent = `${percentages[3]}%`;
 
     this.window.appendChild(this.container);
+    this.window.appendChild(this.container2);
+    this.window.appendChild(this.container3);
 
     this.firstBarElement.classList.add("activate-animation-first-bar");
     this.firstBarElement.style.maxHeight = `${percentages[0]}` + "px";
